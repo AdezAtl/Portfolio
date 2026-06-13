@@ -1,0 +1,138 @@
+---
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About | Abdullah ADESOMI" description="About Abdullah ADESOMI">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Abdullah ADESOMI at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">
+					<svg class="section-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<rect x="2" y="7" width="20" height="14" rx="2"></rect>
+						<path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+					</svg>
+					Background
+				</h2>
+				<div class="content">
+					<p>
+						I am a Front-End Developer and Design Engineer with over three years of industry experience, currently pursuing a degree in Computer Science.</p><p> My work focuses entirely on the intersection of user experience and robust software logic. Over the years, I have specialized in architecting high-performance web applications, moving away from heavy, bloated scripts in favor of lean architectures like Astro's Islands framework to deliver ultra-fast, zero-JS digital experiences.</p>
+
+<p>From building campus-focused networks with Supabase to engineering responsive user interfaces, my focus is always on visual precision, seamless user flows, and uncompromising web performance. I approach front-end development structurally, ensuring that every platform I build is fast, modular, and scaling-ready.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">
+					<svg class="section-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M22 10v6m0 0l-8.5 4.35a2 2 0 0 1-1.998 0L2 16m20-6V8a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2m0 0l8.5-4.35a2 2 0 0 1 1.998 0L22 10"></path>
+						<path d="M6 12v5.85"></path>
+						<path d="M18 12v5.85"></path>
+					</svg>
+					Education
+				</h2>
+				<div class="content">
+					<p>B.Sc. Computer Science | <i style="font-size: smaller; ">In Progress</i>:  Focusing on software engineering principles, algorithms, and data systems to back up hands-on front-end architecture development.</p><br>
+					<p>Self-Taught Front-End Development | <i style="font-size: smaller;">2022 - Present</i>:  Over three years of experience building web applications, with a focus on performance and user experience.</p><br>
+					<p>Frontend Web Foundations | <i style="font-size: smaller;">CodeJika Certified</i>:  Certified in the core building blocks of the web: semantic HTML5, responsive CSS3, and programmatic Vanilla JavaScript.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">
+					<svg class="section-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<circle cx="12" cy="12" r="1"></circle>
+						<path d="M12 1v6m0 6v6"></path>
+						<path d="M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24"></path>
+						<path d="M1 12h6m6 0h6"></path>
+						<path d="M4.22 19.78l4.24-4.24m5.08-5.08l4.24-4.24"></path>
+					</svg>
+					Skills
+				</h2>
+				<div class="content">
+					<p>AstroJS, ReactJS, JavaScript, Tailwind CSS, HTML, SupaBase, Git/Github</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.section-icon {
+		flex-shrink: 0;
+		opacity: 0.9;
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
