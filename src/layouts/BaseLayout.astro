@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 // Component Imports
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
+import Chatbot from '../components/Chatbot.astro';
 
 interface Props {
 	title?: string | undefined;
@@ -25,6 +26,8 @@ const { title, description } = Astro.props;
 			<slot />
 			<Footer />
 		</div>
+
+		<Chatbot />
 
 		<script>
 			// Add “loaded” class once the document has completely loaded.
