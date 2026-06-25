@@ -5,14 +5,40 @@
 
 <div class="chatbot-wrapper">
   <!-- Floating Chat Button -->
-  <button id="chatbot-toggle-btn" class="chatbot-trigger-btn" aria-label="Open chat assistant" title="Chat with Abdullah's AI Assistant">
+  <button
+    id="chatbot-toggle-btn"
+    class="chatbot-trigger-btn"
+    aria-label="Open chat assistant"
+    title="Chat with Abdullah's AI Assistant"
+  >
     <div class="btn-glow"></div>
     <div class="btn-content">
       <!-- Chat Bubble SVG Icon -->
-      <svg class="chat-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      <svg
+        class="chat-icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+        ></path>
       </svg>
-      <svg class="close-icon hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        class="close-icon hidden"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
@@ -26,16 +52,31 @@
     <!-- Panel Header -->
     <header class="chat-header">
       <div class="header-info">
-        <div class="avatar-glow">AA</div>
+        <img src="/assets/profile.jpg" alt="AA" class="avatar-glow" />
         <div class="header-text">
           <h3>Abdullah's Assistant</h3>
-          <span class="status-text"><span class="pulse-dot"></span> Online</span>
+          <span class="status-text"><span class="pulse-dot"></span> Online</span
+          >
         </div>
       </div>
       <div class="header-actions">
         <!-- Close Button -->
-        <button id="chatbot-close-btn" class="header-btn" title="Close Panel" aria-label="Close Chat">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <button
+          id="chatbot-close-btn"
+          class="header-btn"
+          title="Close Panel"
+          aria-label="Close Chat"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
@@ -48,16 +89,32 @@
       <!-- Messages will be dynamically injected here -->
       <div class="message assistant">
         <div class="bubble">
-          Hi! I am Abdullah's professional assistant. Ask me anything about his skills, education, experience, or web development projects!
+          Hi! I am Abdullah's professional assistant. Ask me anything about his
+          skills, education, experience, or web development projects!
         </div>
       </div>
     </div>
 
     <!-- Input Footer -->
     <form id="chatbot-input-form" class="chat-footer">
-      <input type="text" id="chatbot-input-field" placeholder="Ask about Abdullah..." autocomplete="off" maxlength="500" />
+      <input
+        type="text"
+        id="chatbot-input-field"
+        placeholder="Ask about Abdullah..."
+        autocomplete="off"
+        maxlength="500"
+      />
       <button type="submit" id="chatbot-send-btn" aria-label="Send message">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
           <line x1="22" y1="2" x2="11" y2="13"></line>
           <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
         </svg>
@@ -70,7 +127,9 @@
   /* Variables & Global Container Rules */
   .chatbot-wrapper {
     --chat-border-radius: 1.25rem;
-    --chat-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --chat-font-family:
+      system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      sans-serif;
     font-family: var(--chat-font-family);
   }
 
@@ -92,7 +151,9 @@
     align-items: center;
     justify-content: center;
     padding: 0;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    transition:
+      transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.3s ease;
   }
 
   .chatbot-trigger-btn:hover {
@@ -132,7 +193,9 @@
   }
 
   .chatbot-trigger-btn svg {
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+    transition:
+      transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+      opacity 0.2s ease;
     position: absolute;
   }
 
@@ -170,7 +233,9 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition:
+      opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     transform-origin: bottom right;
     animation: openPanel 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
@@ -207,12 +272,8 @@
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.18);
-    display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: var(--text-sm);
     border: 1px solid rgba(255, 255, 255, 0.25);
   }
 
@@ -274,7 +335,9 @@
     align-items: center;
     justify-content: center;
     opacity: 0.8;
-    transition: background-color 0.2s ease, opacity 0.2s ease;
+    transition:
+      background-color 0.2s ease,
+      opacity 0.2s ease;
   }
 
   .header-btn:hover {
@@ -404,12 +467,19 @@
     animation: typing 1.4s infinite ease-in-out;
   }
 
-  .typing-indicator span:nth-child(1) { animation-delay: 0s; }
-  .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
-  .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+  .typing-indicator span:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
 
   @keyframes typing {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0);
       opacity: 0.4;
     }
@@ -438,7 +508,9 @@
     padding: 0.625rem 1.25rem;
     font-size: 0.925rem;
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .chat-footer input:focus {
@@ -458,7 +530,9 @@
     align-items: center;
     justify-content: center;
     padding: 0;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
   }
 
   .chat-footer button:hover {
@@ -474,7 +548,6 @@
     cursor: not-allowed;
     transform: none;
   }
-
 
   /* Responsive Adjustments */
   @media (max-width: 480px) {
@@ -498,25 +571,38 @@
 </style>
 
 <script>
-  import aboutMe from '../content/about-me.md?raw';
+  import aboutMe from "../content/about-me.md?raw";
 
   // Script runs on the client to handle interaction
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     // --- DOM Elements ---
-    const toggleBtn = document.getElementById('chatbot-toggle-btn') as HTMLButtonElement;
-    const panel = document.getElementById('chatbot-panel') as HTMLDivElement;
-    const closeBtn = document.getElementById('chatbot-close-btn') as HTMLButtonElement;
-    const chatLogs = document.getElementById('chatbot-logs') as HTMLDivElement;
-    const inputForm = document.getElementById('chatbot-input-form') as HTMLFormElement;
-    const inputField = document.getElementById('chatbot-input-field') as HTMLInputElement;
-    const sendBtn = document.getElementById('chatbot-send-btn') as HTMLButtonElement;
-    
-    const chatIcon = toggleBtn?.querySelector('.chat-icon') as SVGElement;
-    const closeIcon = toggleBtn?.querySelector('.close-icon') as SVGElement;
+    const toggleBtn = document.getElementById(
+      "chatbot-toggle-btn",
+    ) as HTMLButtonElement;
+    const panel = document.getElementById("chatbot-panel") as HTMLDivElement;
+    const closeBtn = document.getElementById(
+      "chatbot-close-btn",
+    ) as HTMLButtonElement;
+    const chatLogs = document.getElementById("chatbot-logs") as HTMLDivElement;
+    const inputForm = document.getElementById(
+      "chatbot-input-form",
+    ) as HTMLFormElement;
+    const inputField = document.getElementById(
+      "chatbot-input-field",
+    ) as HTMLInputElement;
+    const sendBtn = document.getElementById(
+      "chatbot-send-btn",
+    ) as HTMLButtonElement;
+
+    const chatIcon = toggleBtn?.querySelector(".chat-icon") as SVGElement;
+    const closeIcon = toggleBtn?.querySelector(".close-icon") as SVGElement;
 
     // --- State ---
-    let chatHistory: Array<{ role: 'user' | 'model'; parts: Array<{ text: string }> }> = [];
-    
+    let chatHistory: Array<{
+      role: "user" | "model";
+      parts: Array<{ text: string }>;
+    }> = [];
+
     // Default system instruction setting up the virtual assistant context
     const SYSTEM_PROMPT = `You are a virtual assistant representing Abdullah Adesomi on his portfolio website.
 Your purpose is to answer professional questions about Abdullah in a friendly, polite, and confident manner.
@@ -535,13 +621,13 @@ Guidelines for your responses:
 
     // Toggle opening/closing panel
     function togglePanel() {
-      const isHidden = panel.classList.toggle('hidden');
+      const isHidden = panel.classList.toggle("hidden");
       if (isHidden) {
-        chatIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
+        chatIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
       } else {
-        chatIcon.classList.add('hidden');
-        closeIcon.classList.remove('hidden');
+        chatIcon.classList.add("hidden");
+        closeIcon.classList.remove("hidden");
         inputField.focus();
         scrollToBottom();
       }
@@ -551,7 +637,7 @@ Guidelines for your responses:
     function getApiKey(): string | null {
       // @ts-ignore
       const envKey = import.meta.env.PUBLIC_GEMINI_API_KEY;
-      if (envKey && envKey !== 'undefined' && envKey !== '') {
+      if (envKey && envKey !== "undefined" && envKey !== "") {
         return envKey;
       }
       return null;
@@ -565,19 +651,19 @@ Guidelines for your responses:
     }
 
     // Add a message bubble to the panel log
-    function appendMessage(sender: 'user' | 'assistant', text: string) {
-      const msgDiv = document.createElement('div');
+    function appendMessage(sender: "user" | "assistant", text: string) {
+      const msgDiv = document.createElement("div");
       msgDiv.className = `message ${sender}`;
-      
-      const bubbleDiv = document.createElement('div');
-      bubbleDiv.className = 'bubble';
-      
-      if (sender === 'assistant') {
+
+      const bubbleDiv = document.createElement("div");
+      bubbleDiv.className = "bubble";
+
+      if (sender === "assistant") {
         bubbleDiv.innerHTML = formatMarkdown(text);
       } else {
         bubbleDiv.textContent = text;
       }
-      
+
       msgDiv.appendChild(bubbleDiv);
       chatLogs.appendChild(msgDiv);
       scrollToBottom();
@@ -587,21 +673,23 @@ Guidelines for your responses:
     function formatMarkdown(text: string): string {
       // Escape HTML to prevent XSS
       let escaped = text
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
-      
-      const lines = escaped.split('\n');
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+
+      const lines = escaped.split("\n");
       let formatted: string[] = [];
       let inList = false;
       let inCodeBlock = false;
       let codeBlockContent: string[] = [];
-      
+
       for (let line of lines) {
         // Handle code blocks
-        if (line.startsWith('```')) {
+        if (line.startsWith("```")) {
           if (inCodeBlock) {
-            formatted.push(`<pre><code>${codeBlockContent.join('\n')}</code></pre>`);
+            formatted.push(
+              `<pre><code>${codeBlockContent.join("\n")}</code></pre>`,
+            );
             codeBlockContent = [];
             inCodeBlock = false;
           } else {
@@ -609,17 +697,17 @@ Guidelines for your responses:
           }
           continue;
         }
-        
+
         if (inCodeBlock) {
           codeBlockContent.push(line);
           continue;
         }
-        
+
         // Handle lists
         const listMatch = line.match(/^(\s*)[-*+]\s+(.+)$/);
         if (listMatch) {
           if (!inList) {
-            formatted.push('<ul>');
+            formatted.push("<ul>");
             inList = true;
           }
           let content = parseInline(listMatch[2]);
@@ -627,42 +715,46 @@ Guidelines for your responses:
           continue;
         } else {
           if (inList) {
-            formatted.push('</ul>');
+            formatted.push("</ul>");
             inList = false;
           }
         }
-        
+
         // Standard text lines
-        if (line.trim() === '') {
-          formatted.push('<br>');
+        if (line.trim() === "") {
+          formatted.push("<br>");
         } else {
           formatted.push(`<p>${parseInline(line)}</p>`);
         }
       }
-      
-      if (inList) formatted.push('</ul>');
+
+      if (inList) formatted.push("</ul>");
       if (inCodeBlock && codeBlockContent.length > 0) {
-        formatted.push(`<pre><code>${codeBlockContent.join('\n')}</code></pre>`);
+        formatted.push(
+          `<pre><code>${codeBlockContent.join("\n")}</code></pre>`,
+        );
       }
-      
-      return formatted.join('');
+
+      return formatted.join("");
     }
 
     function parseInline(text: string): string {
-      return text
-        // Bold: **text**
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        // Italic: *text*
-        .replace(/\*(.*?)\*/g, '<em>$1</em>')
-        // Inline code: `code`
-        .replace(/`(.*?)`/g, '<code>$1</code>');
+      return (
+        text
+          // Bold: **text**
+          .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+          // Italic: *text*
+          .replace(/\*(.*?)\*/g, "<em>$1</em>")
+          // Inline code: `code`
+          .replace(/`(.*?)`/g, "<code>$1</code>")
+      );
     }
 
     // Show typing state
     function showTypingIndicator() {
-      const indicator = document.createElement('div');
-      indicator.id = 'chatbot-typing';
-      indicator.className = 'message assistant';
+      const indicator = document.createElement("div");
+      indicator.id = "chatbot-typing";
+      indicator.className = "message assistant";
       indicator.innerHTML = `<div class="typing-indicator"><span></span><span></span><span></span></div>`;
       chatLogs.appendChild(indicator);
       scrollToBottom();
@@ -670,7 +762,7 @@ Guidelines for your responses:
 
     // Remove typing state
     function removeTypingIndicator() {
-      const indicator = document.getElementById('chatbot-typing');
+      const indicator = document.getElementById("chatbot-typing");
       if (indicator) {
         indicator.remove();
       }
@@ -680,42 +772,47 @@ Guidelines for your responses:
     async function queryGemini(userQuestion: string) {
       const apiKey = getApiKey();
       if (!apiKey) {
-        appendMessage('assistant', "System Error: Gemini API Key is not configured. Please add `PUBLIC_GEMINI_API_KEY` to your `.env` file.");
+        appendMessage(
+          "assistant",
+          "System Error: Gemini API Key is not configured. Please add `PUBLIC_GEMINI_API_KEY` to your `.env` file.",
+        );
         return;
       }
 
       showTypingIndicator();
-      
+
       // Update local history format for request body
       chatHistory.push({
-        role: 'user',
-        parts: [{ text: userQuestion }]
+        role: "user",
+        parts: [{ text: userQuestion }],
       });
 
       try {
         const response = await fetch(
           `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
           {
-            method: 'POST',
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
             },
             body: JSON.stringify({
               contents: chatHistory,
               systemInstruction: {
-                parts: [{ text: SYSTEM_PROMPT }]
+                parts: [{ text: SYSTEM_PROMPT }],
               },
               generationConfig: {
                 temperature: 0.7,
                 maxOutputTokens: 800,
-              }
-            })
-          }
+              },
+            }),
+          },
         );
 
         if (!response.ok) {
           const errData = await response.json().catch(() => ({}));
-          throw new Error(errData?.error?.message || `HTTP error ${response.status}`);
+          throw new Error(
+            errData?.error?.message || `HTTP error ${response.status}`,
+          );
         }
 
         const data = await response.json();
@@ -724,43 +821,49 @@ Guidelines for your responses:
         removeTypingIndicator();
 
         if (assistantText) {
-          appendMessage('assistant', assistantText);
+          appendMessage("assistant", assistantText);
           chatHistory.push({
-            role: 'model',
-            parts: [{ text: assistantText }]
+            role: "model",
+            parts: [{ text: assistantText }],
           });
         } else {
-          appendMessage('assistant', "I received an empty response. Please try asking again.");
+          appendMessage(
+            "assistant",
+            "I received an empty response. Please try asking again.",
+          );
         }
       } catch (err: any) {
         removeTypingIndicator();
-        console.error('Gemini API Error:', err);
-        appendMessage('assistant', `Error connecting to Gemini API: ${err.message || err}. Double-check your API key and network connection.`);
-        
+        console.error("Gemini API Error:", err);
+        appendMessage(
+          "assistant",
+          `Error connecting to Gemini API: ${err.message || err}. Double-check your API key and network connection.`,
+        );
+
         // Remove the failed user message from history to prevent getting stuck in a error loop
         chatHistory.pop();
       }
     }
 
     // --- Event Listeners ---
-    
+
     // Toggle panels
-    toggleBtn?.addEventListener('click', togglePanel);
-    closeBtn?.addEventListener('click', togglePanel);
-    
+    toggleBtn?.addEventListener("click", togglePanel);
+    closeBtn?.addEventListener("click", togglePanel);
+
     // Form Submission
-    inputForm?.addEventListener('submit', async (e) => {
+    inputForm?.addEventListener("submit", async (e) => {
       e.preventDefault();
       const question = inputField.value.trim();
       if (!question) return;
 
       // Clear input and disable elements during query
-      inputField.value = '';
+      inputField.value = "";
       inputField.disabled = true;
       sendBtn.disabled = true;
 
       // Append user bubble
-      appendMessage('user', question);
+      appendMessage("user", question);
 
       // Perform query
       await queryGemini(question);
@@ -774,7 +877,10 @@ Guidelines for your responses:
     // --- Initialization Check ---
     const apiKey = getApiKey();
     if (!apiKey) {
-      appendMessage('assistant', "System: Please configure `PUBLIC_GEMINI_API_KEY` in your `.env` file to enable the chat assistant.");
+      appendMessage(
+        "assistant",
+        "System: Please configure `PUBLIC_GEMINI_API_KEY` in your `.env` file to enable the chat assistant.",
+      );
       inputField.disabled = true;
       sendBtn.disabled = true;
       inputField.placeholder = "Chat disabled (Missing API Key)";
