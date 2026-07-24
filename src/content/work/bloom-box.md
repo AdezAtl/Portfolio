@@ -10,7 +10,7 @@ tags:
   - NFT
   - Sales
 ---
-> <a href="https://web3-something.vercel.app/">Live Demo</a>
+> <a href="https://web3-something.vercel.app/"> Live Demo </a>
 
 _Focused heavily on high-fidelity visual fidelity, implementing responsive card layouts, neon glowing accents, and micro-interactions that mirror production-ready decentralized applications (dApps)._
 
