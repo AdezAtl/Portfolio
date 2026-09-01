@@ -636,7 +636,7 @@ Guidelines for your responses:
     // Retrieve API key from environment variable
     function getApiKey(): string | null {
       // @ts-ignore
-      const envKey = import.meta.env.PUBLIC_GEMINI_API_KEY;
+      const envKey = import.meta.env.GEMINI_API_KEY;
       if (envKey && envKey !== "undefined" && envKey !== "") {
         return envKey;
       }
