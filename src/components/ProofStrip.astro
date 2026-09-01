@@ -1,0 +1,19 @@
+---
+const stats = [
+  { value: '6', label: 'products shipped since 2025' },
+  { value: '1', label: 'company founded — UniPulse' },
+  { value: '1', label: 'company joined — Aoni, on JUT' },
+  { value: '2026', label: 'building full-time' },
+];
+---
+
+<section class="border-y border-line bg-paper-alt px-6 py-10 md:px-10">
+  <div class="mx-auto grid max-w-wrap grid-cols-2 gap-y-8 md:grid-cols-4 md:gap-6">
+    {stats.map((s, i) => (
+      <div class="reveal" style={`--reveal-delay:${i * 90}ms`}>
+        <p class="font-display text-3xl font-semibold text-ink md:text-4xl">{s.value}</p>
+        <p class="mt-1 max-w-[14ch] font-mono text-[11px] uppercase tracking-wide text-ink-soft">{s.label}</p>
+      </div>
+    ))}
+  </div>
+</section>

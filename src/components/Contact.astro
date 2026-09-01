@@ -1,0 +1,27 @@
+---
+const links = [
+  { label: 'Email', value: 'hello@adesomi.dev', href: 'mailto:hello@adesomi.dev' },
+  { label: 'GitHub', value: 'github.com/AdezAtl', href: 'https://github.com/AdezAtl' },
+  { label: 'Portfolio v3', value: 'abdullah-can-code.vercel.app', href: 'https://abdullah-can-code.vercel.app' },
+];
+---
+
+<section id="contact" class="border-t border-line bg-paper-alt px-6 py-20 md:px-10 md:py-28">
+  <div class="mx-auto max-w-wrap">
+    <p class="reveal font-mono text-xs uppercase tracking-widest2 text-amber">Get in touch</p>
+    <h2 class="reveal mt-3 max-w-xl font-display text-3xl font-semibold leading-tight text-ink md:text-4xl" style="--reveal-delay:60ms">
+      Need a frontend that isn't a template?
+    </h2>
+    <p class="reveal mt-4 max-w-md text-ink-soft" style="--reveal-delay:100ms">
+      Based in Ibadan, working remotely with clients. Reply times are same-day.
+    </p>
+
+    <div class="reveal mt-10 flex flex-col gap-4 font-mono text-sm md:flex-row md:gap-10" style="--reveal-delay:160ms">
+      {links.map((l) => (
+        <a href={l.href} target={l.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" class="link-underline text-ink">
+          <span class="text-ink-soft">{l.label}:</span> {l.value}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

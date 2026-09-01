@@ -1,262 +1,89 @@
-/* Global variables */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-	/* Colors */
-	--gray-0: #1f1c2b;
-	--gray-50: #f6eae5;
-	--gray-100: #2c2436;
-	--gray-200: #4a3a48;
-	--gray-300: #665d67;
-	--gray-400: #7a6e76;
-	--gray-500: #8f8390;
-	--gray-600: #a59aa4;
-	--gray-700: #c5bfc3;
-	--gray-800: #eae2df;
-	--gray-900: #f7f0ee;
-	--gray-999-basis: 0, 0%, 100%;
-	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
-	--gray-999: #fffaf8;
-
-	--accent-light: #d9b0ff;
-	--accent-regular: #8a63f5;
-	--accent-dark: #6443e8;
-	--accent-overlay: hsla(256, 90%, 70%, 0.18);
-	--accent-subtle-overlay: var(--accent-overlay);
-	--accent-text-over: var(--gray-999);
-
-	--link-color: var(--accent-regular);
-
-	/* Gradients */
-	--gradient-stop-1: var(--accent-light);
-	--gradient-stop-2: var(--accent-regular);
-	--gradient-stop-3: var(--accent-dark);
-	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 150%);
-	--gradient-accent: linear-gradient(
-		150deg,
-		var(--gradient-stop-1),
-		var(--gradient-stop-2),
-		var(--gradient-stop-3)
-	);
-	--gradient-accent-orange: linear-gradient(
-		150deg,
-		#ca7879,
-		var(--accent-regular),
-		var(--accent-dark)
-	);
-	--gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
-
-	/* Shadows */
-	--shadow-sm:
-		0px 6px 3px rgba(9, 11, 17, 0.01), 0px 4px 2px rgba(9, 11, 17, 0.01),
-		0px 2px 2px rgba(9, 11, 17, 0.02), 0px 0px 1px rgba(9, 11, 17, 0.03);
-	--shadow-md:
-		0px 28px 11px rgba(9, 11, 17, 0.01), 0px 16px 10px rgba(9, 11, 17, 0.03),
-		0px 7px 7px rgba(9, 11, 17, 0.05), 0px 2px 4px rgba(9, 11, 17, 0.06);
-	--shadow-lg:
-		0px 62px 25px rgba(9, 11, 17, 0.01), 0px 35px 21px rgba(9, 11, 17, 0.05),
-		0px 16px 16px rgba(9, 11, 17, 0.1), 0px 4px 9px rgba(9, 11, 17, 0.12);
-
-	/* Text Sizes */
-	--text-sm: 0.875rem;
-	--text-base: 1rem;
-	--text-md: 1.125rem;
-	--text-lg: 1.25rem;
-	--text-xl: 1.625rem;
-	--text-2xl: 2.125rem;
-	--text-3xl: 2.625rem;
-	--text-4xl: 3.5rem;
-	--text-5xl: 4.5rem;
-
-	/* Fonts */
-	--font-system:
-		system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-		"Open Sans", "Helvetica Neue", sans-serif;
-	--font-body: "Public Sans", var(--font-system);
-	--font-brand: Rubik, var(--font-system);
-
-	/* Transitions */
-	--theme-transition: 0.2s ease-in-out;
+  color-scheme: light;
 }
 
-:root.theme-dark {
-	--gray-0: #ffffff;
-	--gray-50: #f3f4f7;
-	--gray-100: #e3e6ee;
-	--gray-200: #c3cadb;
-	--gray-300: #a3acc8;
-	--gray-400: #8490b5;
-	--gray-500: #6474a2;
-	--gray-600: #505d84;
-	--gray-700: #3d4663;
-	--gray-800: #283044;
-	--gray-900: #141925;
-	--gray-999-basis: 225, 31%, 5%;
-	--gray-999: #090b11;
-
-	--accent-light: #1c0056;
-	--accent-regular: #7611a6;
-	--accent-dark: #c561f6;
-	--accent-overlay: hsla(280, 89%, 67%, 0.33);
-	--accent-subtle-overlay: hsla(281, 81%, 36%, 0.33);
-	--accent-text-over: var(--gray-0);
-
-	--link-color: var(--accent-dark);
-
-	--gradient-stop-1: #4c11c6;
-	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
-	--gradient-accent-orange: linear-gradient(
-		150deg,
-		#ca7879,
-		var(--accent-regular),
-		var(--accent-light)
-	);
-	--gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
-
-	--shadow-sm:
-		0px 6px 3px rgba(255, 255, 255, 0.01), 0px 4px 2px rgba(255, 255, 255, 0.01),
-		0px 2px 2px rgba(255, 255, 255, 0.02), 0px 0px 1px rgba(255, 255, 255, 0.03);
-	--shadow-md:
-		0px 28px 11px rgba(255, 255, 255, 0.01), 0px 16px 10px rgba(255, 255, 255, 0.03),
-		0px 7px 7px rgba(255, 255, 255, 0.05), 0px 2px 4px rgba(255, 255, 255, 0.06);
-	--shadow-lg:
-		0px 62px 25px rgba(255, 255, 255, 0.01), 0px 35px 21px rgba(255, 255, 255, 0.05),
-		0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(255, 255, 255, 0.12);
+* {
+  box-sizing: border-box;
 }
 
-html,
-body {
-	min-height: 100%;
-	overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-	background-color: var(--gray-999);
-	color: var(--gray-200);
-	font-family: var(--font-body);
-	-webkit-font-smoothing: antialiased;
-	line-height: 1.5;
+  background-color: #F1ECE1;
+  color: #17140F;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-*,
-*::after,
-*::before {
-	box-sizing: border-box;
-	margin: 0;
+::selection {
+  background-color: #C77D22;
+  color: #F1ECE1;
 }
 
-img {
-	max-width: 100%;
-	height: auto;
+/* Visible keyboard focus everywhere — never suppressed */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #C77D22;
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
-a {
-	color: var(--link-color);
+/* Scroll-reveal: rows/blocks fade + rise into place once, staggered by data-delay */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-	line-height: 1.1;
-	font-family: var(--font-brand);
-	font-weight: 600;
-	color: var(--gray-100);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
-h1 {
-	font-size: var(--text-5xl);
+/* Underline-slide link used across the page in place of filled pill buttons */
+.link-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+  background-image: linear-gradient(#C77D22, #C77D22);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  transition: background-size 0.25s ease, color 0.25s ease;
+}
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 0% 1px;
+  color: #C77D22;
 }
 
-h2 {
-	font-size: var(--text-4xl);
-}
-
-h3 {
-	font-size: var(--text-3xl);
-}
-
-h4 {
-	font-size: var(--text-2xl);
-}
-
-h5 {
-	font-size: var(--text-xl);
-}
-
-/* Utilities */
-
-.sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border-width: 0;
-}
-
-.wrapper {
-	width: 100%;
-	max-width: 83rem;
-	margin-inline: auto;
-	padding-inline: 1.5rem;
-}
-
-.stack {
-	display: flex;
-	flex-direction: column;
-}
-
-.gap-2 {
-	gap: 0.5rem;
-}
-.gap-4 {
-	gap: 1rem;
-}
-.gap-8 {
-	gap: 2rem;
-}
-.gap-10 {
-	gap: 2.5rem;
-}
-.gap-15 {
-	gap: 3.75rem;
-}
-.gap-20 {
-	gap: 5rem;
-}
-.gap-30 {
-	gap: 7.5rem;
-}
-.gap-48 {
-	gap: 12rem;
-}
-
-@media (min-width: 50em) {
-	.lg\:gap-2 {
-		gap: 0.5rem;
-	}
-	.lg\:gap-4 {
-		gap: 1rem;
-	}
-	.lg\:gap-8 {
-		gap: 2rem;
-	}
-	.lg\:gap-10 {
-		gap: 2.5rem;
-	}
-	.lg\:gap-15 {
-		gap: 3.75rem;
-	}
-	.lg\:gap-20 {
-		gap: 5rem;
-	}
-	.lg\:gap-30 {
-		gap: 7.5rem;
-	}
-	.lg\:gap-48 {
-		gap: 12rem;
-	}
+/* Placeholder frame for real screenshots that still need to be dropped in */
+.shot-placeholder {
+  border: 1px dashed #57503F;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(87, 80, 63, 0.05),
+    rgba(87, 80, 63, 0.05) 6px,
+    transparent 6px,
+    transparent 12px
+  );
 }

@@ -1,133 +1,39 @@
 ---
-const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Work', href: '/work/' },
-	{ label: 'About', href: '/about/' },
+const links = [
+  { href: '#work', label: 'Work' },
+  { href: '#founder', label: 'Founder' },
+  { href: '#stack', label: 'Stack' },
+  { href: '#contact', label: 'Contact' },
 ];
+
+const time = new Date().toLocaleTimeString('en-US', {
+  hour: 'numeric',
+  minute: '2-digit',
+  hour12: false,
+});
 ---
 
-<nav class="site-nav">
-	<div class="wrapper nav-inner">
-		<a class="nav-logo" href="#hero" aria-label="Arklo Home">
-    <svg width="110" height="28" viewBox="0 0 110 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="2" width="3" height="3" rx="0.8" fill="#000" opacity="0.08" />
-      <rect x="2" y="5" width="11" height="18" rx="2" fill="none" stroke="#000" stroke-width="1.1" opacity="0.3" />
-      <rect x="8" y="10" width="11" height="18" rx="2" fill="none" stroke="#000" stroke-width="1.1" />
-      <rect x="21" y="25" width="2.5" height="2.5" rx="0.6" fill="#000" opacity="0.08" />
-      <text x="28" y="21" font-family="Inter,sans-serif" font-size="13" font-weight="300" letter-spacing="3" fill="#000">ARKLO</text>
-    </svg>
-  </a>
-		<div class="nav-links" aria-label="Main navigation">
-			{
-				textLinks.map(({ label, href }) => (
-					<a href={href} class="nav-link">{label}</a>
-				))
-			}
-		</div>
+<header class="sticky top-0 z-40 border-b border-line bg-paper/90 backdrop-blur-sm">
+  <nav class="mx-auto flex max-w-wrap items-center justify-between px-6 py-4 md:px-10">
+    <a href="#top" class="flex items-center gap-2.5 font-display text-sm font-semibold tracking-tight text-ink">
+      <span class="flex h-7 w-7 items-center justify-center rounded-[6px] bg-ink text-[11px] font-mono font-medium text-amber">AA</span>
+      <span class="hidden sm:inline">Abdullah&nbsp;O.&nbsp;Adesomi</span>
+    </a>
 
-		<a class="download-btn" href="https://www.linkedin.com/in/abdullah-adesomi-074aa1279" target="_blank" rel="noreferrer">
-			Download CV
-		</a>
-	</div>
-</nav>
+    <ul class="hidden items-center gap-7 font-mono text-[13px] uppercase tracking-widest text-ink-soft md:flex">
+      {links.map((l) => (
+        <li>
+          <a href={l.href} class="hover:text-ink">{l.label}</a>
+        </li>
+      ))}
+    </ul>
 
-<style>
-	.site-nav {
-		padding: 1.5rem 0 0;
-		position: sticky;
-		top: 0;
-		z-index: 20;
-		background: rgba(249, 240, 236, 0.8);
-		backdrop-filter: blur(10px);
-	}
-
-	.nav-inner {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 1.5rem;
-		padding: 0.8rem 1.5rem;
-		border-radius: 999px;
-		background: rgba(255, 255, 255, 0.45);
-		box-shadow: 0 10px 25px rgba(60, 40, 58, 0.06);
-	}
-
-	.site-title {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.6rem;
-		font-size: 1.25rem;
-		font-weight: 700;
-		color: var(--gray-100);
-		text-decoration: none;
-		letter-spacing: -0.04em;
-	}
-
-	.brand-mark {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: 1.9rem;
-		height: 1.9rem;
-		border-radius: 0.5rem;
-		background: linear-gradient(135deg, #f3b8ab, #d98174);
-		color: #fff;
-		font-size: 1rem;
-		font-weight: 800;
-	}
-
-	.nav-links {
-		display: flex;
-		align-items: center;
-		gap: 1.5rem;
-		font-size: 0.9rem;
-		font-weight: 600;
-		color: var(--gray-200);
-	}
-
-	.nav-link {
-		text-decoration: none;
-		color: var(--gray-200);
-		opacity: 0.8;
-	}
-
-	.nav-link:hover,
-	.nav-link:focus {
-		opacity: 1;
-		color: var(--gray-100);
-	}
-
-	.download-btn {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		padding: 0.78rem 1.2rem;
-		background: linear-gradient(135deg, #8e6cf5, #6f52f3);
-		color: white;
-		border-radius: 999px;
-		text-decoration: none;
-		font-size: 0.82rem;
-		font-weight: 700;
-		box-shadow: 0 12px 24px rgba(123, 95, 242, 0.2);
-	}
-
-	@media (max-width: 50em) {
-		.site-nav {
-			padding-top: 1rem;
-		}
-
-		.nav-inner {
-			padding-inline: 1rem;
-		}
-
-		.nav-links {
-			display: none;
-		}
-
-		.download-btn {
-			padding: 0.65rem 0.8rem;
-			font-size: 0.75rem;
-		}
-	}
-</style>
-</style>
+    <div class="flex items-center gap-2 rounded-full border border-line px-3 py-1.5 font-mono text-[11px] text-ink-soft">
+      <span class="relative flex h-1.5 w-1.5">
+        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-moss opacity-60"></span>
+        <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-moss"></span>
+      </span>
+      open for work · {time}
+    </div>
+  </nav>
+</header>

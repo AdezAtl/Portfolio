@@ -1,0 +1,44 @@
+---
+const deps = [
+  ['react', '^18.x — primary UI library'],
+  ['astro', '^4.x — content-heavy & marketing builds'],
+  ['tailwindcss', '^3.x — styling system'],
+  ['node', '^20.x — services & tooling'],
+  ['supabase', 'auth, storage, postgres'],
+  ['react-native', 'expo — JUT and mobile work'],
+  ['animejs', 'interaction & motion systems'],
+];
+const devDeps = [
+  ['linux/debian', 'daily driver, server admin'],
+  ['git', 'log --oneline, every day'],
+  ['arduino', 'hobby hardware projects'],
+];
+---
+
+<section id="stack" class="px-6 py-20 md:px-10 md:py-28">
+  <div class="mx-auto max-w-wrap">
+    <p class="reveal font-mono text-xs uppercase tracking-widest2 text-amber">What it's built with</p>
+    <h2 class="reveal mt-3 max-w-lg font-display text-3xl font-semibold leading-tight text-ink md:text-4xl" style="--reveal-delay:60ms">
+      Not a skills grid. The actual stack.
+    </h2>
+
+    <div class="reveal mt-10 overflow-x-auto rounded-[4px] border border-line bg-[#EAE3D2] p-6 font-mono text-[13px] leading-relaxed text-ink-soft md:p-8" style="--reveal-delay:120ms">
+      <p class="text-ink">{'{'}</p>
+      <p class="pl-4 text-ink">"dependencies": {'{'}</p>
+      {deps.map(([k, v], i) => (
+        <p class="pl-8">
+          <span class="text-moss">"{k}"</span>: <span class="text-ink-soft">"{v}"</span>{i < deps.length - 1 ? ',' : ''}
+        </p>
+      ))}
+      <p class="pl-4 text-ink">{'}'},</p>
+      <p class="pl-4 text-ink">"devDependencies": {'{'}</p>
+      {devDeps.map(([k, v], i) => (
+        <p class="pl-8">
+          <span class="text-amber">"{k}"</span>: <span class="text-ink-soft">"{v}"</span>{i < devDeps.length - 1 ? ',' : ''}
+        </p>
+      ))}
+      <p class="pl-4 text-ink">{'}'}</p>
+      <p class="text-ink">{'}'}</p>
+    </div>
+  </div>
+</section>

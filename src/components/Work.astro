@@ -1,0 +1,103 @@
+---
+const projects = [
+  {
+    hash: 'a1e9c2',
+    name: 'UniPulse',
+    role: 'Founder · built end-to-end',
+    desc: 'Fast information and resource-sharing platform for University of Ilorin students — campus news and shared resources first, an events feed as an added layer on top.',
+    tags: ['React', 'Astro', 'Supabase', 'PostgreSQL'],
+    status: 'live',
+    thumb: 'unipulse-thumb.jpg',
+  },
+  {
+    hash: 'f403b7',
+    name: 'JUT — at Aoni',
+    role: 'Frontend & backend developer',
+    desc: "Artisan-booking app for Aoni's first product line. Shipped the auth flow, profile completion, and provider-matching screens.",
+    tags: ['React Native', 'Expo', 'Node.js'],
+    status: 'live',
+    thumb: 'jut-thumb.jpg',
+  },
+  {
+    hash: '7c2e91',
+    name: 'Matog Consulting',
+    role: 'Full build — brand to deploy',
+    desc: 'Marketing site for a management-consulting firm est. 2001, offices in Lagos, Warri and Asaba. DM Serif Display, navy and gold.',
+    tags: ['Astro', 'Tailwind CSS'],
+    status: 'live',
+  },
+  {
+    hash: 'd58a14',
+    name: 'Arklo',
+    role: 'Brand + web design agency',
+    desc: 'Identity and site for a design-agency concept, built around the Stormlight Archive\u2019s Arclo as a design philosophy, not a mascot.',
+    tags: ['Branding', 'Astro'],
+    status: 'live',
+  },
+  {
+    hash: '2b6f0d',
+    name: 'Ejento-S',
+    role: 'Pre-launch waitlist',
+    desc: 'Landing page for an AI-agent aggregator platform. Espresso-brown dark aesthetic, waitlist capture.',
+    tags: ['HTML', 'CSS', 'JS'],
+    status: 'in development',
+  },
+  {
+    hash: '9e14c3',
+    name: "Lola's Hub",
+    role: 'Client — e-commerce build',
+    desc: 'Storefront for an Ibadan fashion boutique. Static HTML/CSS/JS with a localStorage mock-API layer, wired for a real backend later.',
+    tags: ['HTML', 'CSS', 'JS'],
+    status: 'in development',
+  },
+];
+
+const statusColor = (status: string) => (status === 'live' ? 'text-moss' : 'text-amber');
+---
+
+<section id="work" class="px-6 py-20 md:px-10 md:py-28">
+  <div class="mx-auto max-w-wrap">
+    <p class="reveal font-mono text-xs uppercase tracking-widest2 text-amber">Selected work</p>
+    <h2 class="reveal mt-3 max-w-lg font-display text-3xl font-semibold leading-tight text-ink md:text-4xl" style="--reveal-delay:60ms">
+      Six things that shipped. Two still shipping.
+    </h2>
+    <p class="reveal mt-4 max-w-md text-ink-soft" style="--reveal-delay:100ms">
+      Logged the way I'd track it in git — what it is, what's done, and what's still open.
+    </p>
+
+    <div class="mt-14 border-t border-line">
+      {projects.map((p, i) => (
+        <div
+          class="reveal group grid grid-cols-1 items-start gap-4 border-b border-line py-8 md:grid-cols-[5.5rem_1fr_auto] md:items-center md:gap-8"
+          style={`--reveal-delay:${i * 70}ms`}
+        >
+          <p class="font-mono text-xs text-ink-soft/70">{p.hash}</p>
+
+          <div>
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <h3 class="font-display text-xl font-semibold text-ink md:text-2xl">{p.name}</h3>
+              <span class={`font-mono text-[11px] uppercase tracking-wide ${statusColor(p.status)}`}>
+                {p.status}
+              </span>
+            </div>
+            <p class="mt-1 font-mono text-[12px] text-ink-soft">{p.role}</p>
+            <p class="mt-3 max-w-lg text-[15px] leading-relaxed text-ink-soft">{p.desc}</p>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              {p.tags.map((t) => (
+                <li class="rounded-[3px] border border-line px-2 py-1 font-mono text-[11px] text-ink-soft">{t}</li>
+              ))}
+            </ul>
+          </div>
+
+          {p.thumb ? (
+            <div class="shot-placeholder flex h-28 w-full items-center justify-center rounded-[3px] p-3 font-mono text-[10px] leading-snug text-ink-soft md:h-24 md:w-40">
+              // {p.thumb}<br />swap for real screenshot
+            </div>
+          ) : (
+            <div class="hidden md:block md:w-40" aria-hidden="true"></div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
