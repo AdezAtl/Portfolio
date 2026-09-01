@@ -1,78 +1,200 @@
 ---
-import Icon from "./Icon.astro";
-
 const currentYear = new Date().getFullYear();
 ---
 
-<footer>
-  <div class="group">
-    <p>
-      Designed & Developed Right Here With <a href="https://astro.build/"
-        >Astro</a
-      >
-      <Icon icon="rocket-launch" size="1.2em" />
-    </p>
-    <p>&copy; {currentYear} Abdullah ADESOMI</p>
+<footer class="site-footer">
+  <div class="wrapper footer-grid">
+    <div class="contact-card">
+      <div class="portrait-mini">
+        <img src="/assets/profile.jpg" alt="Abdullah ADESOMI" />
+      </div>
+
+      <div class="contact-meta">
+        <h3>Contact Info</h3>
+        <p><strong>Robert Smith</strong><br />Web Developer</p>
+        <ul>
+          <li><a href="mailto:adezalt4336@gmail.com">adezalt4336@gmail.com</a></li>
+          <li><a href="tel:+2347012941798">+234 701 294 1798</a></li>
+          <li><a href="https://www.linkedin.com/in/abdullah-adesomi-074aa1279" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="message-panel">
+      <h3>Let’s Talk</h3>
+      <form class="contact-form">
+        <div class="field-row">
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+        </div>
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   </div>
-  <p class="socials">
-    <a href="https://www.linkedin.com/in/abdullah-adesomi-074aa1279">LinkedIn</a
-    >
-    <a href="https://github.com/AdezAtl"> GitHub</a>
-    <a href="https://wa.me/2347012941798"> WhatsApp</a>
-  </p>
+
+  <div class="wrapper footer-bottom">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/work/">Work</a>
+      <a href="/about/">About</a>
+      <a href="https://github.com/AdezAtl" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://wa.me/2347012941798" target="_blank" rel="noreferrer">WhatsApp</a>
+    </div>
+    <p>© {currentYear} All rights reserved.</p>
+  </div>
 </footer>
+
 <style>
-  footer {
+  .site-footer {
+    padding: 4rem 0 2rem;
+    background: #f7f0ee;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.3fr;
+    gap: 2.5rem;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.3fr;
+    gap: 2.5rem;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+
+  .contact-card,
+  .message-panel {
+    background: rgba(255, 255, 255, 0.44);
+    border: 1px solid rgba(74, 56, 76, 0.08);
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 40px rgba(65, 47, 71, 0.04);
+  }
+
+  .contact-card {
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    margin-top: auto;
-    padding: 3rem 2rem 3rem;
-    text-align: center;
-    color: var(--gray-400);
-    font-size: var(--text-sm);
+    gap: 1.25rem;
+    padding: 1.5rem;
   }
 
-  footer a {
-    color: var(--gray-400);
-    text-decoration: 1px solid underline transparent;
-    text-underline-offset: 0.25em;
-    transition: text-decoration-color var(--theme-transition);
+  .portrait-mini {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #ddd;
+    border: 4px solid #8b66f3;
+    flex-shrink: 0;
   }
 
-  footer a:hover,
-  footer a:focus {
-    text-decoration-color: currentColor;
+  .portrait-mini img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  .group {
+  .contact-meta h3,
+  .message-panel h3 {
+    font-size: clamp(1.5rem, 2vw, 2.3rem);
+    margin-bottom: 0.75rem;
+    color: var(--gray-100);
+  }
+
+  .contact-meta p {
+    margin-bottom: 0.75rem;
+    color: var(--gray-300);
+  }
+
+  .contact-meta ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .contact-meta a,
+  .footer-links a {
+    color: var(--gray-200);
+    text-decoration: none;
+  }
+
+  .message-panel {
+    padding: 1.5rem;
+  }
+
+  .contact-form {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    border: 1px solid rgba(83, 74, 96, 0.12);
+    border-radius: 0.9rem;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 0.9rem 1rem;
+    font: inherit;
+    color: var(--gray-100);
+  }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: #8f8f99;
+  }
+
+  .contact-form button {
+    justify-self: start;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #f26666, #ef5d5d);
+    color: white;
+    padding: 0.9rem 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .footer-bottom {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(75, 62, 73, 0.1);
+    color: var(--gray-300);
+    font-size: 0.85rem;
   }
 
-  .socials {
+  .footer-links {
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
   }
 
-  @media (min-width: 50em) {
-    footer {
-      flex-direction: row;
-      justify-content: space-between;
-      padding: 2.5rem 5rem;
+  @media (max-width: 50em) {
+    .footer-grid {
+      grid-template-columns: 1fr;
     }
 
-    .group {
-      flex-direction: row;
-      gap: 1rem;
-      flex-wrap: wrap;
+    .field-row {
+      grid-template-columns: 1fr;
     }
 
-    .socials {
-      justify-content: flex-end;
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 </style>
