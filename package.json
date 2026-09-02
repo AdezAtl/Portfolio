@@ -1,18 +1,23 @@
 {
-  "name": "abdullah-adesomi-portfolio",
+  "name": "Abdullah Adesomi Portfolio",
   "type": "module",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.0.4",
-    "@tailwindcss/vite": "^4.0.0",
+    "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.2.10",
-    "tailwindcss": "^4.0.0"
+    "tailwind": "^2.3.1",
+    "tailwindcss": "^4.3.3"
+  },
+  "allowScripts": {
+    "esbuild": true
   }
 }
