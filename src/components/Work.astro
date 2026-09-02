@@ -1,4 +1,8 @@
 ---
+// Files already live in /public/assets — reference them by URL path.
+// Do NOT `import` from public/: Astro/Vite only allow imports for files
+// inside src/ (where they'd go through the asset pipeline). Anything in
+// public/ is copied to the output as-is and is only ever reached by string path.
 const projects = [
   {
     hash: 'a1e9c2',
@@ -6,8 +10,8 @@ const projects = [
     role: 'Founder · built end-to-end',
     desc: 'Fast information and resource-sharing platform for University of Ilorin students — campus news and shared resources first, an events feed as an added layer on top.',
     tags: ['React', 'Astro', 'Supabase', 'PostgreSQL'],
-    status: 'live',
-    thumb: 'unipulse-thumb.jpg',
+    status: 'in development',
+    thumb: '/assets/unipulse.png',
   },
   {
     hash: 'f403b7',
@@ -16,7 +20,7 @@ const projects = [
     desc: "Artisan-booking app for Aoni's first product line. Shipped the auth flow, profile completion, and provider-matching screens.",
     tags: ['React Native', 'Expo', 'Node.js'],
     status: 'live',
-    thumb: 'jut-thumb.jpg',
+    thumb: '/assets/jut.png',
   },
   {
     hash: '7c2e91',
@@ -25,6 +29,7 @@ const projects = [
     desc: 'Marketing site for a management-consulting firm est. 2001, offices in Lagos, Warri and Asaba. DM Serif Display, navy and gold.',
     tags: ['Astro', 'Tailwind CSS'],
     status: 'live',
+    thumb: '/assets/matog.png',
   },
   {
     hash: 'd58a14',
@@ -33,6 +38,7 @@ const projects = [
     desc: 'Identity and site for a design-agency concept, built around the Stormlight Archive\u2019s Arclo as a design philosophy, not a mascot.',
     tags: ['Branding', 'Astro'],
     status: 'live',
+    thumb: '/assets/arklo.png',
   },
   {
     hash: '2b6f0d',
@@ -41,6 +47,7 @@ const projects = [
     desc: 'Landing page for an AI-agent aggregator platform. Espresso-brown dark aesthetic, waitlist capture.',
     tags: ['HTML', 'CSS', 'JS'],
     status: 'in development',
+    thumb: '/assets/ejento-s.png',
   },
   {
     hash: '9e14c3',
@@ -49,6 +56,7 @@ const projects = [
     desc: 'Storefront for an Ibadan fashion boutique. Static HTML/CSS/JS with a localStorage mock-API layer, wired for a real backend later.',
     tags: ['HTML', 'CSS', 'JS'],
     status: 'in development',
+    thumb: '/assets/lola-s-hub.png',
   },
 ];
 
@@ -59,7 +67,7 @@ const statusColor = (status: string) => (status === 'live' ? 'text-moss' : 'text
   <div class="mx-auto max-w-wrap">
     <p class="reveal font-mono text-xs uppercase tracking-widest2 text-amber">Selected work</p>
     <h2 class="reveal mt-3 max-w-lg font-display text-3xl font-semibold leading-tight text-ink md:text-4xl" style="--reveal-delay:60ms">
-      Six things that shipped. Two still shipping.
+      Six things that shipped. Three still shipping.
     </h2>
     <p class="reveal mt-4 max-w-md text-ink-soft" style="--reveal-delay:100ms">
       Logged the way I'd track it in git — what it is, what's done, and what's still open.
@@ -89,13 +97,16 @@ const statusColor = (status: string) => (status === 'live' ? 'text-moss' : 'text
             </ul>
           </div>
 
-          {p.thumb ? (
-            <div class="shot-placeholder flex h-28 w-full items-center justify-center rounded-[3px] p-3 font-mono text-[10px] leading-snug text-ink-soft md:h-24 md:w-40">
-              // {p.thumb}<br />swap for real screenshot
-            </div>
-          ) : (
-            <div class="hidden md:block md:w-40" aria-hidden="true"></div>
-          )}
+          <div class="h-28 w-full overflow-hidden rounded-[3px] border border-line md:h-24 md:w-40">
+            <img
+              src={p.thumb}
+              alt={`${p.name} interface screenshot`}
+              loading="lazy"
+              width="320"
+              height="240"
+              class="h-full w-full object-cover grayscale-[15%] transition group-hover:grayscale-0"
+            />
+          </div>
         </div>
       ))}
     </div>
