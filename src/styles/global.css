@@ -1,6 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Design tokens — replaces tailwind.config.mjs under Tailwind v4's
+   CSS-first config. Each namespace below generates the matching
+   utility classes (e.g. --color-amber => bg-amber, text-amber, ...). */
+@theme {
+  --color-paper: #F1ECE1;
+  --color-paper-alt: #E7DFCE;
+  --color-ink: #17140F;
+  --color-ink-soft: #57503F;
+  --color-amber: #C77D22;
+  --color-moss: #4B5D3A;
+  --color-line: #D2C7AE;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: Inter, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --tracking-tightest: -0.045em;
+  --tracking-widest2: 0.22em;
+
+  /* --container-* drives max-w-* utilities, so this is what
+     max-w-wrap resolves to across every section. */
+  --container-wrap: 72rem;
+}
 
 :root {
   color-scheme: light;
