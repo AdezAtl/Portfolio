@@ -1,39 +1,123 @@
 ---
 const links = [
-  { href: '#work', label: 'Work' },
-  { href: '#founder', label: 'Founder' },
+  { href: '#about', label: 'About' },
+  { href: '#work', label: 'Experience' },
+  { href: '#projects', label: 'Work' },
   { href: '#stack', label: 'Stack' },
   { href: '#contact', label: 'Contact' },
 ];
-
-const time = new Date().toLocaleTimeString('en-US', {
-  hour: 'numeric',
-  minute: '2-digit',
-  hour12: false,
-});
 ---
 
-<header class="sticky top-0 z-40 border-b border-line bg-paper/90 backdrop-blur-sm">
-  <nav class="mx-auto flex max-w-wrap items-center justify-between px-6 py-4 md:px-10">
-    <a href="#top" class="flex items-center gap-2.5 font-display text-sm font-semibold tracking-tight text-ink">
-      <span class="flex h-7 w-7 items-center justify-center rounded-[6px] bg-ink text-[11px] font-mono font-medium text-amber">AA</span>
-      <span class="hidden sm:inline">Abdullah&nbsp;O.&nbsp;Adesomi</span>
+<header class="nav">
+  <div class="nav__inner container">
+    <a href="#top" class="nav__mark" data-hover data-cursor-shape="square" aria-label="Back to top">
+      <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 9 L6 16 L11 23" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M21 9 L26 16 L21 23" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="16" cy="16" r="1.6" fill="currentColor"/>
+      </svg>
+      <span>adesomi.dev</span>
     </a>
 
-    <ul class="hidden items-center gap-7 font-mono text-[13px] uppercase tracking-widest text-ink-soft md:flex">
-      {links.map((l) => (
-        <li>
-          <a href={l.href} class="link-underline hover:text-ink">{l.label}</a>
-        </li>
+    <nav class="nav__links" aria-label="Primary">
+      {links.map((link) => (
+        <a href={link.href} data-hover>{link.label}</a>
       ))}
-    </ul>
+    </nav>
 
-    <div class="flex items-center gap-2 rounded-full border border-line px-3 py-1.5 font-mono text-[11px] text-ink-soft">
-      <span class="relative flex h-1.5 w-1.5">
-        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-moss opacity-80"></span>
-        <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-moss"></span>
-      </span>
-      open for work · {time}
+    <div class="nav__actions">
+      <div class="nav__badge">
+        <span class="pulse-dot"></span>
+        <span>open for work</span>
+      </div>
+      <a href="mailto:adezatl4336@gmail.com" class="nav__cta" data-hover data-magnetic>Say hi</a>
     </div>
-  </nav>
+  </div>
 </header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(10, 12, 14, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px; /* Reduced from 72px for tighter rhythm */
+  }
+
+  .nav__mark {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    color: var(--c-text-primary);
+    font: var(--t-label);
+    font-size: 0.9375rem;
+  }
+
+  .nav__mark svg { color: var(--c-accent); }
+
+  .nav__links {
+    display: flex;
+    gap: var(--sp-5);
+  }
+
+  .nav__links a {
+    font: var(--t-small);
+    color: var(--c-text-secondary);
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+
+  .nav__links a:hover { color: var(--c-accent-bright); }
+
+  .nav__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+  }
+
+  .nav__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font: var(--t-label);
+    font-size: 0.6875rem;
+    color: var(--c-text-secondary);
+    padding: 3px 8px;
+    border: 1px solid var(--c-border);
+    border-radius: 9999px;
+    background: var(--c-bg-raised);
+  }
+
+  .pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 6px rgba(34, 197, 94, 0.8);
+  }
+
+  .nav__cta {
+    font: var(--t-small);
+    font-weight: 500;
+    color: var(--c-bg);
+    background: var(--c-accent);
+    padding: 6px 14px;
+    border-radius: var(--r-sm);
+    transition: background var(--dur-fast) var(--ease-out), transform 120ms ease;
+    will-change: transform;
+  }
+
+  .nav__cta:hover { background: var(--c-accent-bright); }
+
+  @media (max-width: 720px) {
+    .nav__links { display: none; }
+    .nav__badge { display: none; }
+  }
+</style>

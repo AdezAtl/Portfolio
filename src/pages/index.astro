@@ -2,21 +2,40 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
 import Work from '../components/Work.astro';
-import Split from '../components/Split.astro';
-import Stack from '../components/Stack.astro';
+import Projects from '../components/Projects.astro';
+import StackManifest from '../components/StackManifest.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+import CursorRing from '../components/CursorRing.astro';
 ---
 
-<Layout>
+<Layout
+  title="Abdullah Adesomi — Full-Stack Developer & Product Builder"
+  description="Portfolio of Abdullah Adesomi, a full-stack developer and builder based in Ibadan. Shipping client web platforms, startup systems, and independent tools."
+>
+  <CursorRing />
   <Nav />
   <main>
     <Hero />
+    <About />
     <Work />
-    <Split />
-    <Stack />
+    <Projects />
+    <StackManifest />
     <Contact />
   </main>
   <Footer />
 </Layout>
+
+<script>
+  import { initCursor } from '../scripts/cursor';
+  import { initHeroIntro } from '../scripts/hero-intro';
+  import { initReveal } from '../scripts/reveal';
+  import { initInteractive } from '../scripts/interactive';
+
+  initCursor();
+  initHeroIntro();
+  initReveal();
+  initInteractive();
+</script>

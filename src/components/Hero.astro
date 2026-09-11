@@ -1,46 +1,411 @@
 ---
-const logLines = [
-  { date: '2026.08', text: 'resolved 51 merge-conflict files across jut-frontend, shipped clean' },
-  { date: '2026.08', text: 'designed matog-consulting.site — full brand + build, Lagos/Warri/Asaba' },
-  { date: '2026.07', text: 'connected custom domain, portfolio v3 live on vercel' },
-  { date: '2026.06', text: 'unipulse: news + resource feed shipped to first testers' },
-];
 ---
 
-<section id="top" class="relative overflow-hidden px-6 pt-16 pb-20 md:px-10 md:pt-24 md:pb-28">
-  <div class="mx-auto grid max-w-wrap gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
-    <div>
-      <p class="reveal font-mono text-xs uppercase tracking-widest2 text-amber">
-        Ibadan, Nigeria — CS, University of Ilorin
-      </p>
+<section class="hero" id="top">
+  <div class="container hero__inner">
+    <div class="hero__main">
+      <div class="hero__status-pill" data-hero-label>
+        <span class="status-dot"></span>
+        <span class="hero__label label">Full-Stack Developer &amp; Product Builder · Ibadan, Nigeria</span>
+      </div>
 
-      <h1 class="reveal mt-5 max-w-xl font-display text-[2.6rem] font-semibold leading-[1.05] tracking-tightest text-ink sm:text-6xl" style="--reveal-delay:80ms">
-        I build the product.<br />
-        Then I build the<br />
-        company around it.
+      <h1 class="hero__headline">
+        <span class="hero__line" data-hero-line>Full-stack developer and builder.</span>
+        <span class="hero__line hero__line--accent" data-hero-line>Shipping software that holds up in production.</span>
       </h1>
 
-      <p class="reveal mt-6 max-w-md text-[17px] leading-relaxed text-ink-soft" style="--reveal-delay:160ms">
-        Founder of UniPulse. Frontend and backend on JUT at Aoni. The person
-        Ibadan businesses call when their site needs to actually work — not
-        just look finished in a screenshot.
+      <p class="hero__sub" data-hero-sub>
+        CS student at the University of Ilorin. I engineer bespoke client web platforms (like One Consulting),
+        startup systems (JUT at Aoni), and self-directed products (UniPulse) — taking rough concepts directly
+        into reliable, working code from interface to database.
       </p>
 
-      <div class="reveal mt-9 flex flex-wrap items-center gap-x-8 gap-y-3" style="--reveal-delay:240ms">
-        <a href="#work" class="link-underline font-display text-base font-medium text-ink">
-          View the work →
+      <div class="hero__actions" data-hero-actions>
+        <a href="#projects" class="btn btn--primary" data-hover data-magnetic>
+          <span>See the work</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn--ghost" data-hover data-magnetic>Get in touch</a>
+        <a href="https://github.com/AdezAtl" target="_blank" rel="noopener noreferrer" class="hero__social-link" data-hover>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+          <span>@AdezAtl</span>
         </a>
       </div>
     </div>
 
-    <div id="log" class="reveal self-end rounded-[4px] border border-line bg-[#EAE3D2] p-5 font-mono text-[12.5px] leading-relaxed text-ink-soft md:p-6" style="--reveal-delay:200ms">
-      <p class="mb-3 text-ink"><span class="text-amber">abdullah@ibadan</span>:~$ <span class="text-ink">git log --oneline -4</span></p>
-      {logLines.map((l) => (
-        <p class="border-t border-dashed border-line py-2 first:border-t-0">
-          <span class="text-moss">{l.date}</span> — {l.text}
-        </p>
-      ))}
-      <p class="mt-3 text-ink-soft/70">// full history in <a href="#work" class="link-underline">selected work</a> below</p>
+    <div class="hero__aside">
+      <div class="terminal" id="hero-terminal">
+        <div class="terminal__bar">
+          <div class="terminal__dots">
+            <span class="terminal__dot terminal__dot--red"></span>
+            <span class="terminal__dot terminal__dot--yellow"></span>
+            <span class="terminal__dot terminal__dot--green"></span>
+          </div>
+          <span class="terminal__title">git-log — zsh</span>
+          <span class="terminal__badge">main</span>
+        </div>
+        <div class="terminal__body font-mono">
+          <p class="terminal__prompt">
+            <span class="terminal__user">abdullah@ibadan</span>:<span class="terminal__dir">~</span>$&nbsp;<span class="terminal__cmd" id="terminal-cmd">git log --oneline -4</span>
+          </p>
+          <div class="terminal__entries" id="terminal-entries">
+            <div class="terminal__entry">
+              <span class="terminal__hash">2026.08</span>
+              <span class="terminal__desc">resolved 51 merge-conflict files across jut-frontend, shipped clean</span>
+            </div>
+            <div class="terminal__entry">
+              <span class="terminal__hash">2026.08</span>
+              <span class="terminal__desc">designed one-consulting.site — full brand + build, Lagos/Warri/Asaba</span>
+            </div>
+            <div class="terminal__entry">
+              <span class="terminal__hash">2026.07</span>
+              <span class="terminal__desc">connected custom domain, portfolio v3 live on vercel</span>
+            </div>
+            <div class="terminal__entry">
+              <span class="terminal__hash">2026.06</span>
+              <span class="terminal__desc">unipulse: news + resource feed shipped to first campus cohorts</span>
+            </div>
+          </div>
+          <div class="terminal__footer">
+            <span class="terminal__comment">// 6 production projects logged below</span>
+            <button class="terminal__action" id="terminal-toggle-btn" type="button" data-hover>toggle details</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="container hero__meta-strip" data-hero-meta>
+    <dl class="meta-strip">
+      <div class="meta-strip__item">
+        <dt>Location &amp; University</dt>
+        <dd>Ibadan, Nigeria · CS, Unilorin</dd>
+      </div>
+      <div class="meta-strip__item">
+        <dt>Work Spectrum</dt>
+        <dd>Client platforms, startups &amp; tools</dd>
+      </div>
+      <div class="meta-strip__item">
+        <dt>Availability</dt>
+        <dd><span class="meta-strip__status"></span>Open for engineering roles &amp; contracts</dd>
+      </div>
+    </dl>
+  </div>
 </section>
+
+<style>
+  .hero {
+    /* Whitespace eliminated before hero section */
+    padding-top: var(--sp-4);
+    padding-bottom: var(--sp-6);
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--sp-6);
+    align-items: start;
+  }
+
+  .hero__main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero__status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    width: fit-content;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    background: var(--c-bg-raised);
+    border: 1px solid var(--c-border);
+    margin-bottom: var(--sp-3);
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+  }
+
+  .hero__label {
+    margin-bottom: 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--c-text-secondary);
+  }
+
+  /* Compact headline scale to guarantee CTAs visible without scrolling */
+  .hero__headline {
+    font-family: var(--f-head);
+    font-size: clamp(1.65rem, 1.35rem + 1.5vw, 2.35rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--c-text-primary);
+    max-width: 24ch;
+    margin: 0;
+  }
+
+  .hero__line {
+    display: block;
+  }
+
+  .hero__line--accent {
+    color: var(--c-text-secondary);
+  }
+
+  .hero__sub {
+    margin-top: var(--sp-3);
+    font: var(--t-body);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--c-text-secondary);
+    max-width: 58ch;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--sp-3);
+    margin-top: var(--sp-4);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-2);
+    font: var(--t-small);
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: var(--r-sm);
+    transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform 120ms ease;
+    will-change: transform;
+    text-decoration: none;
+  }
+
+  .btn--primary {
+    background: var(--c-accent);
+    color: var(--c-bg);
+    border: 1px solid var(--c-accent);
+  }
+  .btn--primary:hover {
+    background: var(--c-accent-bright);
+    border-color: var(--c-accent-bright);
+    color: var(--c-bg);
+  }
+
+  .btn--ghost {
+    border: 1px solid var(--c-border-strong);
+    color: var(--c-text-primary);
+    background: var(--c-bg-raised);
+  }
+  .btn--ghost:hover {
+    border-color: var(--c-accent);
+    color: var(--c-accent-bright);
+  }
+
+  .hero__social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font: var(--t-label);
+    font-size: 0.8125rem;
+    color: var(--c-text-tertiary);
+    padding: 8px 12px;
+    border-radius: var(--r-sm);
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+  .hero__social-link:hover {
+    color: var(--c-accent-bright);
+  }
+
+  /* Terminal Git Log Widget */
+  .hero__aside {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .terminal {
+    background: var(--c-bg-raised);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-md);
+    overflow: hidden;
+    box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.45);
+  }
+
+  .terminal__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 14px;
+    background: var(--c-bg-elevated);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .terminal__dots {
+    display: flex;
+    gap: 6px;
+  }
+
+  .terminal__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .terminal__dot--red { background: #ef4444; opacity: 0.8; }
+  .terminal__dot--yellow { background: #eab308; opacity: 0.8; }
+  .terminal__dot--green { background: #22c55e; opacity: 0.8; }
+
+  .terminal__title {
+    font: var(--t-label);
+    font-size: 0.725rem;
+    color: var(--c-text-tertiary);
+  }
+
+  .terminal__badge {
+    font: var(--t-label);
+    font-size: 0.6875rem;
+    color: var(--c-accent);
+    background: var(--c-accent-wash);
+    padding: 1px 6px;
+    border-radius: var(--r-sm);
+  }
+
+  .terminal__body {
+    padding: var(--sp-4);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--c-text-secondary);
+  }
+
+  .terminal__prompt {
+    color: var(--c-text-primary);
+    margin-bottom: var(--sp-3);
+    border-bottom: 1px dashed var(--c-border);
+    padding-bottom: var(--sp-2);
+  }
+
+  .terminal__user { color: var(--c-signal); }
+  .terminal__dir { color: var(--c-accent); }
+  .terminal__cmd { color: var(--c-text-primary); font-weight: 500; }
+
+  .terminal__entries {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+
+  .terminal__entry {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: var(--sp-2);
+    align-items: baseline;
+    padding-block: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    transition: background 150ms ease, transform 150ms ease;
+  }
+
+  .terminal__entry:hover {
+    background: rgba(79, 184, 201, 0.05);
+    transform: translateX(3px);
+  }
+
+  .terminal__hash {
+    color: #22c55e;
+    font-weight: 500;
+  }
+
+  .terminal__desc {
+    color: var(--c-text-secondary);
+  }
+
+  .terminal__footer {
+    margin-top: var(--sp-3);
+    padding-top: var(--sp-2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.725rem;
+    color: var(--c-text-tertiary);
+  }
+
+  .terminal__action {
+    color: var(--c-accent);
+    background: transparent;
+    font: var(--t-label);
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--c-border);
+    cursor: pointer;
+    transition: all 150ms ease;
+  }
+  .terminal__action:hover {
+    border-color: var(--c-accent);
+    color: var(--c-accent-bright);
+    background: var(--c-accent-wash);
+  }
+
+  /* Quick Facts Meta Strip */
+  .hero__meta-strip {
+    margin-top: var(--sp-5);
+  }
+
+  .meta-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--sp-4);
+    margin: 0;
+    padding-top: var(--sp-4);
+    border-top: 1px solid var(--c-border);
+  }
+
+  .meta-strip__item dt {
+    font: var(--t-label);
+    font-size: 0.75rem;
+    color: var(--c-text-tertiary);
+    margin-bottom: 3px;
+  }
+
+  .meta-strip__item dd {
+    margin: 0;
+    font: var(--t-small);
+    color: var(--c-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .meta-strip__status {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    display: inline-block;
+  }
+
+  @media (max-width: 900px) {
+    .hero__inner {
+      grid-template-columns: 1fr;
+      gap: var(--sp-5);
+    }
+    .hero__headline { max-width: none; }
+    .meta-strip {
+      grid-template-columns: 1fr;
+      gap: var(--sp-3);
+    }
+  }
+</style>

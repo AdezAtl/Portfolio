@@ -1,114 +1,148 @@
 ---
-// Files already live in /public/assets — reference them by URL path.
-// Do NOT `import` from public/: Astro/Vite only allow imports for files
-// inside src/ (where they'd go through the asset pipeline). Anything in
-// public/ is copied to the output as-is and is only ever reached by string path.
-const projects = [
+const roles = [
   {
-    hash: 'a1e9c2',
-    name: 'UniPulse',
-    role: 'Founder · built end-to-end',
-    desc: 'Fast information and resource-sharing platform for University of Ilorin students — campus news and shared resources first, an events feed as an added layer on top.',
-    tags: ['React', 'Astro', 'Supabase', 'PostgreSQL'],
-    status: 'in development',
-    thumb: '/assets/unipulse.png',
+    period: '2024 — Present',
+    role: 'Independent Web Engineer & Builder',
+    org: 'Client Engagements',
+    description:
+      'Deliver custom web platforms and e-commerce architectures directly for commercial clients (including One Consulting and Lola’s Hub). Own the complete lifecycle from semantic frontend engineering and custom typography to API pipelines and production deployment.',
+    tags: ['Astro', 'React', 'Tailwind CSS', 'TypeScript', 'Node.js', 'Vercel'],
   },
   {
-    hash: 'f403b7',
-    name: 'JUT — at Aoni',
-    role: 'Frontend & backend developer',
-    desc: "Artisan-booking app for Aoni's first product line. Shipped the auth flow, profile completion, and provider-matching screens.",
-    tags: ['React Native', 'Expo', 'Node.js'],
-    status: 'live',
-    thumb: '/assets/jut.png',
+    period: '2025 — Present',
+    role: 'Frontend & Backend Developer',
+    org: 'Aoni',
+    description:
+      'Work across the full stack of JUT, an on-demand home services marketplace. Own booking-flow features end to end — UI, API routes, provider onboarding, and the Prisma/PostgreSQL layer behind them — plus transactional email delivery.',
+    tags: ['React Native', 'Expo', 'Next.js', 'Prisma', 'PostgreSQL'],
   },
   {
-    hash: '7c2e91',
-    name: 'Matog Consulting',
-    role: 'Full build — brand to deploy',
-    desc: 'Marketing site for a management-consulting firm est. 2001, offices in Lagos, Warri and Asaba. DM Serif Display, navy and gold.',
-    tags: ['Astro', 'Tailwind CSS'],
-    status: 'live',
-    thumb: '/assets/matog.png',
-  },
-  {
-    hash: 'd58a14',
-    name: 'Arklo',
-    role: 'Brand + web design agency',
-    desc: 'Identity and site for a design-agency concept, built around the Stormlight Archive\u2019s Arclo as a design philosophy, not a mascot.',
-    tags: ['Branding', 'Astro'],
-    status: 'live',
-    thumb: '/assets/arklo.png',
-  },
-  {
-    hash: '2b6f0d',
-    name: 'Ejento-S',
-    role: 'Pre-launch waitlist',
-    desc: 'Landing page for an AI-agent aggregator platform. Espresso-brown dark aesthetic, waitlist capture.',
-    tags: ['HTML', 'CSS', 'JS'],
-    status: 'in development',
-    thumb: '/assets/ejento-s.png',
-  },
-  {
-    hash: '9e14c3',
-    name: "Lola's Hub",
-    role: 'Client — e-commerce build',
-    desc: 'Storefront for an Ibadan fashion boutique. Static HTML/CSS/JS with a localStorage mock-API layer, wired for a real backend later.',
-    tags: ['HTML', 'CSS', 'JS'],
-    status: 'in development',
-    thumb: '/assets/lola-s-hub.png',
+    period: '2024 — Present',
+    role: 'Founder & Full-Stack Engineer',
+    org: 'UniPulse',
+    description:
+      'Built a campus information and resource-sharing platform from the ground up for University of Ilorin students. Designed schema models, real-time feeds, and deployed the production system solo.',
+    tags: ['React', 'Astro', 'PostgreSQL', 'Supabase'],
   },
 ];
-
-const statusColor = (status: string) => (status === 'live' ? 'text-moss' : 'text-amber');
 ---
 
-<section id="work" class="px-6 py-20 md:px-10 md:py-28">
-  <div class="mx-auto max-w-wrap">
-    <p class="reveal font-mono text-xs uppercase tracking-widest2 text-amber">Selected work</p>
-    <h2 class="reveal mt-3 max-w-lg font-display text-3xl font-semibold leading-tight text-ink md:text-4xl" style="--reveal-delay:60ms">
-      Six things that shipped. Three still shipping.
-    </h2>
-    <p class="reveal mt-4 max-w-md text-ink-soft" style="--reveal-delay:100ms">
-      Logged the way I'd track it in git — what it is, what's done, and what's still open.
-    </p>
+<section class="work" id="work" data-reveal>
+  <div class="container">
+    <div class="work__header">
+      <p class="label">Experience</p>
+      <h2 class="work__title">Commercial delivery, startup engineering &amp; founder scope.</h2>
+    </div>
 
-    <div class="mt-14 border-t border-line">
-      {projects.map((p, i) => (
-        <div
-          class="reveal group grid grid-cols-1 items-start gap-4 border-b border-line py-8 md:grid-cols-[5.5rem_1fr_auto] md:items-center md:gap-8"
-          style={`--reveal-delay:${i * 70}ms`}
-        >
-          <p class="font-mono text-xs text-ink-soft/70">{p.hash}</p>
-
-          <div>
-            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <h3 class="font-display text-xl font-semibold text-ink md:text-2xl">{p.name}</h3>
-              <span class={`font-mono text-[11px] uppercase tracking-wide ${statusColor(p.status)}`}>
-                {p.status}
-              </span>
-            </div>
-            <p class="mt-1 font-mono text-[12px] text-ink-soft">{p.role}</p>
-            <p class="mt-3 max-w-lg text-[15px] leading-relaxed text-ink-soft">{p.desc}</p>
-            <ul class="mt-4 flex flex-wrap gap-2">
-              {p.tags.map((t) => (
-                <li class="rounded-[3px] border border-line px-2 py-1 font-mono text-[11px] text-ink-soft">{t}</li>
-              ))}
+    <ul class="work__list">
+      {roles.map((r) => (
+        <li class="work__item" data-hover data-cursor-shape="square" data-cursor-pad="4">
+          <span class="work__period">{r.period}</span>
+          <div class="work__body">
+            <h3 class="work__role">{r.role} <span class="work__org">— {r.org}</span></h3>
+            <p class="work__desc">{r.description}</p>
+            <ul class="work__tags">
+              {r.tags.map((tag) => <li>{tag}</li>)}
             </ul>
           </div>
-
-          <div class="h-28 w-full overflow-hidden rounded-[3px] border border-line md:h-24 md:w-40">
-            <img
-              src={p.thumb}
-              alt={`${p.name} interface screenshot`}
-              loading="lazy"
-              width="320"
-              height="240"
-              class="h-full w-full object-cover grayscale-[15%] transition group-hover:grayscale-0"
-            />
-          </div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   </div>
 </section>
+
+<style>
+  .work {
+    padding-block: var(--sp-8);
+    border-top: 1px solid var(--c-border);
+  }
+
+  .work__header {
+    max-width: 60ch;
+  }
+
+  .work__title {
+    font: var(--t-h1);
+    color: var(--c-text-primary);
+    margin-top: var(--sp-2);
+    letter-spacing: -0.015em;
+  }
+
+  .work__list {
+    list-style: none;
+    margin: var(--sp-6) 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .work__item {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: var(--sp-6);
+    padding: var(--sp-5);
+    border-top: 1px solid var(--c-border);
+    border-radius: var(--r-md);
+    transition: background 150ms ease, border-color 150ms ease;
+  }
+
+  .work__item:hover {
+    background: var(--c-bg-raised);
+  }
+
+  .work__item:first-child { border-top: 1px solid var(--c-border); }
+
+  .work__period {
+    font: var(--t-label);
+    font-size: 0.775rem;
+    color: var(--c-text-tertiary);
+    padding-top: var(--sp-1);
+  }
+
+  .work__role {
+    font: var(--t-h3);
+    color: var(--c-text-primary);
+    margin: 0;
+  }
+
+  .work__org {
+    font-weight: 400;
+    color: var(--c-text-secondary);
+  }
+
+  .work__desc {
+    margin-top: var(--sp-3);
+    font: var(--t-body);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--c-text-secondary);
+    max-width: 62ch;
+  }
+
+  .work__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    margin: var(--sp-4) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .work__tags li {
+    font: var(--t-label);
+    font-size: 0.725rem;
+    color: var(--c-accent);
+    background: var(--c-accent-wash);
+    border: 1px solid rgba(79, 184, 201, 0.15);
+    border-radius: var(--r-sm);
+    padding: 2px 8px;
+  }
+
+  @media (max-width: 720px) {
+    .work__item {
+      grid-template-columns: 1fr;
+      gap: var(--sp-2);
+      padding: var(--sp-4) 0;
+    }
+  }
+</style>

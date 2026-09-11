@@ -1,0 +1,244 @@
+---
+const skills = [
+  'React', 'Astro', 'TypeScript', 'Tailwind CSS', 'Node.js',
+  'PostgreSQL', 'Supabase', 'Prisma', 'React Native', 'anime.js', 'Linux / Debian', 'Git'
+];
+
+const stats = [
+  { value: 6, suffix: '', label: 'Production Platforms Shipped' },
+  { value: 51, suffix: '', label: 'Merge Conflict Files Cleared Cleanly' },
+  { value: 100, suffix: '%', label: 'Bespoke Code (No Page Builders)' },
+  { value: 3, suffix: '', label: 'Active Maintained Deployments' },
+];
+---
+
+<section class="about" id="about" data-reveal>
+  <div class="container about__inner">
+    <div class="about__copy">
+      <p class="label">Engineering Philosophy</p>
+      <h2 class="about__headline">I take rough requirements directly to working software.</h2>
+
+      <p class="about__p">
+        I’m a Computer Science student at the University of Ilorin based in Ibadan. I build software
+        with a simple standard: the interface must be responsive and fast, and the data model behind it
+        must not break under edge cases.
+      </p>
+
+      <p class="about__p">
+        My experience spans independent client delivery (such as engineering the multi-city brand and web platform
+        for <strong>One Consulting</strong>, and boutique e-commerce for <strong>Lola's Hub</strong>), startup
+        engineering (shipping the booking, auth, and provider onboarding pipelines for <strong>JUT</strong> at
+        <strong>Aoni</strong>), and founding <strong>UniPulse</strong> solo from database schema to campus rollout.
+      </p>
+
+      <p class="about__p">
+        I don't require lengthy design handoffs — I code layouts natively with semantic HTML, modern CSS Grid,
+        and anime.js motion systems. When a build fails over environment variables or an auth role cascades into
+        a redirect loop, I trace the root cause and fix it permanently.
+      </p>
+
+      <!-- Stat Counter Strip -->
+      <div class="about__stats" id="stats-counter-strip">
+        {stats.map((s) => (
+          <div class="stat-card" data-hover>
+            <span class="stat-card__number" data-count={s.value}>0</span>
+            <span class="stat-card__suffix">{s.suffix}</span>
+            <span class="stat-card__label">{s.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <ul class="about__skills">
+        {skills.map((skill) => (
+          <li data-hover data-cursor-shape="square">{skill}</li>
+        ))}
+      </ul>
+    </div>
+
+    <aside class="about__aside">
+      <div class="about__facts">
+        <h3 class="facts__title">Verified Snapshot</h3>
+
+        <div class="fact-item">
+          <dt>Location</dt>
+          <dd>Ibadan, Nigeria</dd>
+        </div>
+        <div class="fact-item">
+          <dt>Academics</dt>
+          <dd>Computer Science — University of Ilorin</dd>
+        </div>
+        <div class="fact-item">
+          <dt>Client Builds</dt>
+          <dd>One Consulting · Lola's Hub · Arklo</dd>
+        </div>
+        <div class="fact-item">
+          <dt>Startup Engineering</dt>
+          <dd>JUT at Aoni (Artisan booking marketplace)</dd>
+        </div>
+        <div class="fact-item">
+          <dt>Founder</dt>
+          <dd>UniPulse (University campus platform)</dd>
+        </div>
+        <div class="fact-item">
+          <dt>Work Environment</dt>
+          <dd>Debian Linux daily driver · Git CLI</dd>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding-block: var(--sp-8);
+    border-top: 1px solid var(--c-border);
+  }
+
+  .about__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: var(--sp-8);
+    align-items: start;
+  }
+
+  .about__headline {
+    font: var(--t-h1);
+    color: var(--c-text-primary);
+    margin-top: var(--sp-2);
+    letter-spacing: -0.015em;
+  }
+
+  .about__p {
+    font: var(--t-body);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--c-text-secondary);
+    max-width: 62ch;
+    margin-top: var(--sp-4);
+  }
+
+  .about__p strong {
+    color: var(--c-text-primary);
+    font-weight: 500;
+  }
+
+  /* Stats Grid */
+  .about__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+    margin-top: var(--sp-6);
+    max-width: 62ch;
+  }
+
+  .stat-card {
+    padding: var(--sp-3) var(--sp-4);
+    background: var(--c-bg-raised);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-sm);
+    display: flex;
+    flex-direction: column;
+    transition: border-color 150ms ease, background 150ms ease;
+  }
+
+  .stat-card:hover {
+    border-color: var(--c-accent-dim);
+    background: var(--c-bg-elevated);
+  }
+
+  .stat-card__number {
+    font-family: var(--f-head);
+    font-size: 1.85rem;
+    font-weight: 600;
+    color: var(--c-accent-bright);
+    line-height: 1;
+    display: inline;
+  }
+
+  .stat-card__suffix {
+    font-family: var(--f-head);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--c-accent);
+    display: inline;
+  }
+
+  .stat-card__label {
+    font: var(--t-label);
+    font-size: 0.725rem;
+    color: var(--c-text-tertiary);
+    margin-top: var(--sp-1);
+    line-height: 1.35;
+  }
+
+  .about__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    margin: var(--sp-6) 0 0;
+    padding: 0;
+    list-style: none;
+    max-width: 62ch;
+  }
+
+  .about__skills li {
+    font: var(--t-label);
+    font-size: 0.75rem;
+    color: var(--c-text-secondary);
+    border: 1px solid var(--c-border-strong);
+    background: var(--c-bg-raised);
+    border-radius: var(--r-sm);
+    padding: var(--sp-1) var(--sp-3);
+    transition: all 150ms ease;
+  }
+
+  .about__skills li:hover {
+    color: var(--c-accent-bright);
+    border-color: var(--c-accent);
+  }
+
+  /* Aside Card */
+  .about__aside {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about__facts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+    padding: var(--sp-5);
+    background: var(--c-bg-raised);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-md);
+  }
+
+  .facts__title {
+    font: var(--t-label);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--c-accent);
+    margin: 0;
+    padding-bottom: var(--sp-2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .fact-item dt {
+    font: var(--t-label);
+    font-size: 0.725rem;
+    color: var(--c-text-tertiary);
+    margin-bottom: 2px;
+  }
+
+  .fact-item dd {
+    margin: 0;
+    font: var(--t-small);
+    color: var(--c-text-primary);
+  }
+
+  @media (max-width: 860px) {
+    .about__inner { grid-template-columns: 1fr; }
+    .about__stats { grid-template-columns: 1fr; }
+  }
+</style>

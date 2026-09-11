@@ -1,27 +1,96 @@
 ---
-const links = [
-  { label: 'Email', value: 'hello@adesomi.dev', href: 'mailto:hello@adesomi.dev' },
-  { label: 'GitHub', value: 'github.com/AdezAtl', href: 'https://github.com/AdezAtl' },
-  { label: 'Portfolio v3', value: 'abdullah-can-code.vercel.app', href: 'https://abdullah-can-code.vercel.app' },
+const channels = [
+  { label: 'Email', value: 'adezatl4336@gmail.com', href: 'mailto:adezatl4336@gmail.com' },
+  { label: 'WhatsApp', value: '+234 701 294 1798', href: 'https://wa.me/2347012941798' },
+  { label: 'GitHub', value: '@AdezAtl', href: 'https://github.com/AdezAtl' },
 ];
 ---
 
-<section id="contact" class="border-t border-line bg-paper-alt px-6 py-20 md:px-10 md:py-28">
-  <div class="mx-auto max-w-wrap">
-    <p class="reveal font-mono text-xs uppercase tracking-widest2 text-amber">Get in touch</p>
-    <h2 class="reveal mt-3 max-w-xl font-display text-3xl font-semibold leading-tight text-ink md:text-4xl" style="--reveal-delay:60ms">
-      Need a frontend that isn't a template?
-    </h2>
-    <p class="reveal mt-4 max-w-md text-ink-soft" style="--reveal-delay:100ms">
-      Based in Ibadan, working remotely with clients. Reply times are same-day.
-    </p>
-
-    <div class="reveal mt-10 flex flex-col gap-4 font-mono text-sm md:flex-row md:gap-10" style="--reveal-delay:160ms">
-      {links.map((l) => (
-        <a href={l.href} target={l.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" class="link-underline text-ink">
-          <span class="text-ink-soft">{l.label}:</span> {l.value}
-        </a>
-      ))}
+<section class="contact" id="contact" data-reveal>
+  <div class="container contact__inner">
+    <div>
+      <p class="label">Contact</p>
+      <h2 class="contact__headline">Open to frontend and backend roles, and freelance work.</h2>
+      <p class="contact__sub">Email's the fastest way to reach me — I'm quick to reply.</p>
     </div>
+
+    <ul class="contact__list">
+      {channels.map((c) => (
+        <li>
+          <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" data-hover>
+            <span class="contact__label">{c.label}</span>
+            <span class="contact__value">{c.value} ↗</span>
+          </a>
+        </li>
+      ))}
+    </ul>
   </div>
 </section>
+
+<style>
+  .contact {
+    padding-block: var(--sp-8);
+    border-top: 1px solid var(--c-border);
+  }
+
+  .contact__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: var(--sp-8);
+    align-items: start;
+  }
+
+  .contact__headline {
+    font: var(--t-h1);
+    color: var(--c-text-primary);
+    margin-top: var(--sp-4);
+    max-width: 16ch;
+  }
+
+  .contact__sub {
+    margin-top: var(--sp-4);
+    font: var(--t-body-lg);
+    color: var(--c-text-secondary);
+  }
+
+  .contact__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact__list li {
+    border-top: 1px solid var(--c-border);
+  }
+
+  .contact__list li:last-child {
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .contact__list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--sp-4);
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+
+  .contact__label {
+    font: var(--t-label);
+    color: var(--c-text-tertiary);
+  }
+
+  .contact__value {
+    font: var(--t-body);
+    color: var(--c-text-primary);
+  }
+
+  .contact__list a:hover .contact__value { color: var(--c-accent-bright); }
+
+  @media (max-width: 720px) {
+    .contact__inner { grid-template-columns: 1fr; }
+    .contact__headline { max-width: none; }
+  }
+</style>

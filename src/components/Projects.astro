@@ -1,0 +1,164 @@
+---
+const projects = [
+  {
+    id: 'unipulse',
+    hash: 'a1e9c2',
+    name: 'UniPulse',
+    category: 'product',
+    categoryLabel: 'Product · Campus Platform',
+    status: 'in development',
+    statusClass: 'status--amber',
+    role: 'Founder · Solo Architecture',
+    highlight: 'Campus information & academic resource distribution',
+    description:
+      'Built solo from PostgreSQL database schema to live web application. Distributes verified University of Ilorin announcements and shared coursework resources to student cohorts.',
+    tags: ['React', 'Astro', 'Supabase', 'PostgreSQL'],
+    href: 'https://unipulse-app.vercel.app',
+    linkLabel: 'unipulse-app.vercel.app',
+  },
+  {
+    id: 'jut',
+    hash: 'f403b7',
+    name: 'JUT — at Aoni',
+    category: 'startup',
+    categoryLabel: 'Startup · Marketplace App',
+    status: 'live',
+    statusClass: 'status--green',
+    role: 'Frontend & Backend Developer',
+    highlight: 'Auth flows, customer onboarding & provider matching',
+    description:
+      'Artisan-booking platform for Aoni’s flagship marketplace product line. Shipped the end-to-end customer authentication flow, profile onboarding, provider matching screens, and API endpoints.',
+    tags: ['React Native', 'Expo', 'Node.js', 'PostgreSQL', 'Prisma'],
+    href: 'https://juthire.com',
+    linkLabel: 'juthire.com',
+  },
+  {
+    id: 'one',
+    hash: '7c2e91',
+    name: 'One Consulting',
+    category: 'client',
+    categoryLabel: 'Client Delivery · Brand & Web',
+    status: 'live',
+    statusClass: 'status--green',
+    role: 'Full Build — Brand to Deploy',
+    highlight: 'Management consulting corporate platform est. 2001',
+    description:
+      'Full brand identity and corporate marketing platform for an established Nigerian consulting firm with offices across Lagos, Warri, and Asaba. Custom type pairing in navy and gold with zero page-builder bloat.',
+    tags: ['Astro', 'Tailwind CSS', 'TypeScript', 'SEO'],
+    href: 'https://one-consulting.site',
+    linkLabel: 'one-consulting.site',
+  },
+  {
+    id: 'arklo',
+    hash: 'd58a14',
+    name: 'Arklo',
+    category: 'client',
+    categoryLabel: 'Studio Concept · UI Architecture',
+    status: 'live',
+    statusClass: 'status--green',
+    role: 'Brand + Web Design Studio',
+    highlight: 'Modular design agency manifesto and identity',
+    description:
+      'Identity system and digital platform for a design-agency concept, built around the Stormlight Archive’s Arclo as an architectural design philosophy: modular components forming a coherent whole.',
+    tags: ['Branding', 'Astro', 'anime.js', 'UI Architecture'],
+    href: 'https://arklo-studio.vercel.app',
+    linkLabel: 'arklo-studio.vercel.app',
+  },
+  {
+    id: 'ejento-s',
+    hash: '2b6f0d',
+    name: 'Ejento-S',
+    category: 'product',
+    categoryLabel: 'Product · Waitlist Engine',
+    status: 'in development',
+    statusClass: 'status--amber',
+    role: 'Pre-Launch Product Engineer',
+    highlight: 'AI-agent aggregator directory & high-conversion capture',
+    description:
+      'Landing page and early-access engine for an autonomous AI-agent aggregator. Built with a rich espresso-dark palette, high-conversion email capture, and automated verification pipelines.',
+    tags: ['HTML5', 'CSS Grid', 'JavaScript', 'API Pipeline'],
+    href: 'https://ejento-s.vercel.app',
+    linkLabel: 'ejento-s.vercel.app',
+  },
+  {
+    id: 'lolas-hub',
+    hash: '9e14c3',
+    name: "Lola's Hub",
+    category: 'client',
+    categoryLabel: 'Client Delivery · E-Commerce',
+    status: 'in development',
+    statusClass: 'status--amber',
+    role: 'Client — E-Commerce Storefront',
+    highlight: 'Boutique storefront with localStorage mock API layer',
+    description:
+      'Storefront for an Ibadan fashion boutique. Engineered with a localStorage mock-API layer, responsive garment grid, cart state machine, and clean interfaces wired for backend scale.',
+    tags: ['HTML5', 'CSS Grid', 'JavaScript', 'Store API'],
+    href: 'https://lolas-hub.vercel.app',
+    linkLabel: 'lolas-hub.vercel.app',
+  },
+];
+---
+
+<section class="projects" id="projects" data-reveal>
+  <div class="container">
+    <div class="projects__header">
+      <div>
+        <p class="label">Selected Work</p>
+        <h2 class="projects__title">Six systems shipped. Three actively maintained.</h2>
+        <p class="projects__subtitle">
+          Logged the way I track in version control: client platforms, startup infrastructure, and independent tools.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs powered by anime.js -->
+      <div class="projects__filters" role="tablist" aria-label="Filter projects">
+        <button class="filter-tab is-active" data-filter="all" type="button" data-hover>All (6)</button>
+        <button class="filter-tab" data-filter="client" type="button" data-hover>Client Work (3)</button>
+        <button class="filter-tab" data-filter="product" type="button" data-hover>Products (2)</button>
+        <button class="filter-tab" data-filter="startup" type="button" data-hover>Startups (1)</button>
+      </div>
+    </div>
+
+    <div class="projects__grid" id="projects-grid">
+      {projects.map((p) => (
+        <article class="project-card" data-category={p.category} data-hover data-cursor-shape="square" data-cursor-pad="4">
+          <div class="project-card__top">
+            <div class="project-card__meta-left">
+              <span class="project-card__hash">{p.hash}</span>
+              <span class="project-card__category">{p.categoryLabel}</span>
+            </div>
+            <span class={`project-card__status ${p.statusClass}`}>
+              <span class="status-indicator"></span>
+              <span>{p.status}</span>
+            </span>
+          </div>
+
+          <div class="project-card__main">
+            <div class="project-card__head">
+              <h3 class="project-card__name">{p.name}</h3>
+              <a href={p.href} target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label={`Visit ${p.name}`} data-hover>
+                <span>{p.linkLabel}</span>
+                <span class="arrow-glyph">↗</span>
+              </a>
+            </div>
+
+            <p class="project-card__role">{p.role}</p>
+
+            <div class="project-card__highlight">
+              <span class="project-card__highlight-dot">⚡</span>
+              <span>{p.highlight}</span>
+            </div>
+
+            <p class="project-card__desc">{p.description}</p>
+          </div>
+
+          <div class="project-card__footer">
+            <ul class="project-card__tags">
+              {p.tags.map((tag) => <li class="project-card__tag-item">{tag}</li>)}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

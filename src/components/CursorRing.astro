@@ -1,0 +1,52 @@
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+<style is:global>
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: var(--c-accent-bright);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px rgba(124, 214, 227, 0.9);
+    transition: opacity 150ms ease;
+    will-change: left, top, transform;
+  }
+
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--c-accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.85;
+    will-change: left, top, width, height, border-radius;
+  }
+
+  .cursor-ring.is-snapped {
+    background: var(--c-accent-wash);
+    border-color: var(--c-accent-bright);
+    opacity: 1;
+  }
+
+  .cursor-dot.is-active {
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+  }
+
+  @media (hover: none), (pointer: coarse) {
+    .cursor-dot,
+    .cursor-ring {
+      display: none !important;
+    }
+  }
+</style>

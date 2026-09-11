@@ -1,0 +1,103 @@
+---
+const dependencies = [
+  { name: 'react', version: '^18.x', role: 'Primary interactive client state & dynamic components', project: 'UniPulse' },
+  { name: 'astro', version: '^5.x', role: 'Zero-JS static core, rapid delivery & SEO architecture', project: 'One Consulting, Arklo, Portfolio' },
+  { name: 'node.js', version: '^20.x', role: 'Backend runtime, background tasks & API routes', project: 'JUT, UniPulse' },
+  { name: 'react-native', version: 'expo', role: 'Cross-platform mobile interfaces & provider booking', project: 'JUT at Aoni' },
+  { name: 'supabase', version: '^2.x', role: 'PostgreSQL database, Row Level Security & authentication', project: 'UniPulse' },
+  { name: 'prisma', version: '^5.x', role: 'Type-safe ORM, migrations & schema management', project: 'JUT' },
+  { name: 'animejs', version: '^3.2', role: 'Hardware-accelerated kinetic motion & micro-interactions', project: 'Core' },
+  { name: 'tailwindcss', version: '^3.4', role: 'Design token utilities & responsive styling', project: 'One Consulting' },
+];
+
+const devDependencies = [
+  { name: 'linux/debian', version: 'daily driver', role: 'Server deployment, CLI tooling & VPS management' },
+  { name: 'git', version: 'git log --oneline', role: 'Version control, conflict resolution & multi-branch flows' },
+  { name: 'typescript', version: '^5.x', role: 'Static analysis, interface contracts & API type-safety' },
+  { name: 'arduino', version: 'avr-c', role: 'Embedded microcontrollers & physical computing hobby builds' },
+];
+---
+
+<section class="stack" id="stack" data-reveal>
+  <div class="container">
+    <div class="stack__header">
+      <p class="label">Engineering Stack</p>
+      <h2 class="stack__title">Not a decorative skills grid. The actual dependencies.</h2>
+      <p class="stack__subtitle">
+        Every package and tool here is actively running in a deployed build, client project, or production repository.
+      </p>
+    </div>
+
+    <div class="manifest" id="manifest-viewer">
+      <div class="manifest__bar">
+        <div class="manifest__tabs">
+          <button class="manifest__tab is-active" type="button" data-hover data-tab="package">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+            <span>package.json</span>
+          </button>
+          <button class="manifest__tab" type="button" data-hover data-tab="architecture">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <span>architecture.md</span>
+          </button>
+        </div>
+        <span class="manifest__meta">read-only · 23.4 KB</span>
+      </div>
+
+      <div class="manifest__content font-mono" id="manifest-panel-package">
+        <div class="code-line"><span class="c-bracket">&#123;</span></div>
+        <div class="code-line indent-1">
+          <span class="c-key">"name"</span>: <span class="c-str">"abdullah-adesomi-stack"</span>,
+        </div>
+        <div class="code-line indent-1">
+          <span class="c-key">"author"</span>: <span class="c-str">"Abdullah Adesomi &lt;adezatl4336@gmail.com&gt;"</span>,
+        </div>
+        <div class="code-line indent-1">
+          <span class="c-key">"dependencies"</span>: <span class="c-bracket">&#123;</span>
+        </div>
+
+        {dependencies.map((d, i) => (
+          <div class="code-line indent-2 manifest-row" data-dep={d.name} data-role={d.role} data-hover>
+            <span class="c-prop">"{d.name}"</span>: <span class="c-val">"{d.version}"</span><span class="c-comma">{i < dependencies.length - 1 ? ',' : ''}</span>
+            <span class="c-comment">// {d.role} [{d.project}]</span>
+          </div>
+        ))}
+
+        <div class="code-line indent-1"><span class="c-bracket">&#125;</span>,</div>
+        <div class="code-line indent-1">
+          <span class="c-key">"devDependencies"</span>: <span class="c-bracket">&#123;</span>
+        </div>
+
+        {devDependencies.map((d, i) => (
+          <div class="code-line indent-2 manifest-row" data-dep={d.name} data-role={d.role} data-hover>
+            <span class="c-devprop">"{d.name}"</span>: <span class="c-val">"{d.version}"</span><span class="c-comma">{i < devDependencies.length - 1 ? ',' : ''}</span>
+            <span class="c-comment">// {d.role}</span>
+          </div>
+        ))}
+
+        <div class="code-line indent-1"><span class="c-bracket">&#125;</span></div>
+        <div class="code-line"><span class="c-bracket">&#125;</span></div>
+      </div>
+
+      <div class="manifest__content font-mono is-hidden" id="manifest-panel-architecture">
+        <div class="arch-notes">
+          <h4 class="arch-heading"># Core Engineering Invariants</h4>
+          <p class="arch-p">1. <strong>Direct DOM &amp; Zero Framework Overhead:</strong> Astro provides 0-bundle static pages by default; anime.js provides deterministic, frame-budgeted kinetic motion without heavy React runtime penalties.</p>
+          <p class="arch-p">2. <strong>Data Reliability First:</strong> PostgreSQL schemas are typed end-to-end via Supabase / Prisma. Constraints live in the database, not just client validation.</p>
+          <p class="arch-p">3. <strong>Browser as the Design Tool:</strong> Every layout is coded natively with CSS Grid and custom properties, bypassing bloated visual builders.</p>
+        </div>
+      </div>
+
+      <div class="manifest__footer">
+        <span class="manifest__hint">💡 Hover or click any dependency line to inspect production usage</span>
+        <span class="manifest__status" id="manifest-inspector-text">Awaiting selection</span>
+      </div>
+    </div>
+  </div>
+</section>

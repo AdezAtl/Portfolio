@@ -1,5 +1,5 @@
 {
-  "name": "Abdullah Adesomi Portfolio",
+  "name": "portfolio",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -12,12 +12,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.2.10",
-    "tailwind": "^2.3.1",
-    "tailwindcss": "^4.3.3"
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "animejs": "^3.2.2",
+    "astro": "^7.3.2"
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "@types/animejs": "^3.1.13"
   }
 }
