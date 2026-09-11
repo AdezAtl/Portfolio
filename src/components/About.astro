@@ -1,14 +1,23 @@
 ---
 const skills = [
-  'React', 'Astro', 'TypeScript', 'Tailwind CSS', 'Node.js',
-  'PostgreSQL', 'Supabase', 'Prisma', 'React Native', 'anime.js', 'Linux / Debian', 'Git'
+  "React",
+  "Astro",
+  "TypeScript",
+  "Tailwind CSS",
+  "Node.js",
+  "PostgreSQL",
+  "Supabase",
+  "Prisma",
+  "anime.js",
+  "Linux (Debian/Ubuntu)",
+  "Git",
 ];
 
 const stats = [
-  { value: 6, suffix: '', label: 'Production Platforms Shipped' },
-  { value: 51, suffix: '', label: 'Merge Conflict Files Cleared Cleanly' },
-  { value: 100, suffix: '%', label: 'Bespoke Code (No Page Builders)' },
-  { value: 3, suffix: '', label: 'Active Maintained Deployments' },
+  { value: 6, suffix: "", label: "Production Platforms Shipped" },
+  { value: 100, suffix: "%", label: "Bespoke Code (No Page Builders)" },
+  { value: 2, suffix: "", label: "Active Maintained Deployments" },
+  { value: 100, suffix: "%", label: "Client Satisfaction" },
 ];
 ---
 
@@ -16,42 +25,55 @@ const stats = [
   <div class="container about__inner">
     <div class="about__copy">
       <p class="label">Engineering Philosophy</p>
-      <h2 class="about__headline">I take rough requirements directly to working software.</h2>
+      <h2 class="about__headline">
+        I take rough requirements directly to working software.
+      </h2>
 
       <p class="about__p">
-        I’m a Computer Science student at the University of Ilorin based in Ibadan. I build software
-        with a simple standard: the interface must be responsive and fast, and the data model behind it
-        must not break under edge cases.
+        I&apos;m a Computer Science student at the University of Ilorin based in
+        Ibadan. I build software with a simple standard: the interface must be
+        responsive and fast, and the data model behind it must not break under
+        edge cases.
       </p>
 
       <p class="about__p">
-        My experience spans independent client delivery (such as engineering the multi-city brand and web platform
-        for <strong>One Consulting</strong>, and boutique e-commerce for <strong>Lola's Hub</strong>), startup
-        engineering (shipping the booking, auth, and provider onboarding pipelines for <strong>JUT</strong> at
-        <strong>Aoni</strong>), and founding <strong>UniPulse</strong> solo from database schema to campus rollout.
+        My experience spans independent client delivery (such as engineering the
+        multi-city brand and web platform for <strong>One Consulting</strong>,
+        and boutique e-commerce for <strong>Clothes Hub</strong>), startup
+        engineering (shipping the booking, auth, and provider onboarding
+        pipelines for <strong>JUT</strong> at
+        <strong>Aoni</strong>), and founding <strong>UniPulse</strong> solo from database
+        schema to campus rollout.
       </p>
 
       <p class="about__p">
-        I don't require lengthy design handoffs — I code layouts natively with semantic HTML, modern CSS Grid,
-        and anime.js motion systems. When a build fails over environment variables or an auth role cascades into
-        a redirect loop, I trace the root cause and fix it permanently.
+        I don't require lengthy design handoffs — I code layouts natively with
+        semantic HTML, modern CSS Grid, and anime.js motion systems.
       </p>
 
       <!-- Stat Counter Strip -->
       <div class="about__stats" id="stats-counter-strip">
-        {stats.map((s) => (
-          <div class="stat-card" data-hover>
-            <span class="stat-card__number" data-count={s.value}>0</span>
-            <span class="stat-card__suffix">{s.suffix}</span>
-            <span class="stat-card__label">{s.label}</span>
-          </div>
-        ))}
+        {
+          stats.map((s) => (
+            <div class="stat-card" data-hover>
+              <span class="stat-card__number" data-count={s.value}>
+                0
+              </span>
+              <span class="stat-card__suffix">{s.suffix}</span>
+              <span class="stat-card__label">{s.label}</span>
+            </div>
+          ))
+        }
       </div>
 
       <ul class="about__skills">
-        {skills.map((skill) => (
-          <li data-hover data-cursor-shape="square">{skill}</li>
-        ))}
+        {
+          skills.map((skill) => (
+            <li data-hover data-cursor-shape="square">
+              {skill}
+            </li>
+          ))
+        }
       </ul>
     </div>
 
@@ -69,19 +91,19 @@ const stats = [
         </div>
         <div class="fact-item">
           <dt>Client Builds</dt>
-          <dd>One Consulting · Lola's Hub · Arklo</dd>
+          <dd>One Consulting · Clothes Hub · Arklo</dd>
         </div>
         <div class="fact-item">
           <dt>Startup Engineering</dt>
-          <dd>JUT at Aoni (Artisan booking marketplace)</dd>
+          <dd>JUT at Aoni</dd>
         </div>
         <div class="fact-item">
           <dt>Founder</dt>
-          <dd>UniPulse (University campus platform)</dd>
+          <dd>UniPulse</dd>
         </div>
         <div class="fact-item">
           <dt>Work Environment</dt>
-          <dd>Debian Linux daily driver · Git CLI</dd>
+          <dd>Debian/Ubuntu Linux · Git CLI</dd>
         </div>
       </div>
     </aside>
@@ -138,7 +160,9 @@ const stats = [
     border-radius: var(--r-sm);
     display: flex;
     flex-direction: column;
-    transition: border-color 150ms ease, background 150ms ease;
+    transition:
+      border-color 150ms ease,
+      background 150ms ease;
   }
 
   .stat-card:hover {
@@ -238,7 +262,11 @@ const stats = [
   }
 
   @media (max-width: 860px) {
-    .about__inner { grid-template-columns: 1fr; }
-    .about__stats { grid-template-columns: 1fr; }
+    .about__inner {
+      grid-template-columns: 1fr;
+    }
+    .about__stats {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
